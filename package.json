@@ -32,11 +32,15 @@
     "version": "npm run build && git add -Af dist docs",
     "postversion": "git push && git push --tags"
   },
+  "peerDependencies": {
+    "io-ts": "^1.8.5"
+  },
   "devDependencies": {
     "@faast/ts-config": "github:go-faast/faast-ts-config",
     "@types/jest": "^23.3.2",
     "@types/node": "^10.11.0",
     "coveralls": "^3.0.2",
+    "io-ts": "^1.8.5",
     "jest": "^23.6.0",
     "jest-config": "^23.6.0",
     "lint-staged": "^8.0.0",
