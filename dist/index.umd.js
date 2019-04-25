@@ -1,7 +1,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('io-ts')) :
     typeof define === 'function' && define.amd ? define(['exports', 'io-ts'], factory) :
-    (factory((global.faastTsConfigLibraryTemplate = {}),global.t));
+    (factory((global.faastTsCommon = {}),global.t));
 }(this, (function (exports,t) { 'use strict';
 
     /*! *****************************************************************************
