@@ -24,8 +24,19 @@ describe('types', () => {
       const x = new Date()
       expect(DateT.decode(x).value).toEqual(x)
     })
-    it('decode returns error for invalid Date', () => {
-      expect(DateT.decode(5).isLeft()).toBe(true)
+    it('decode returns success for number', () => {
+      const x = new Date()
+      expect(DateT.decode(x.getTime()).value).toEqual(x)
+    })
+    it('decode returns success for ISO string date', () => {
+      const x = new Date()
+      expect(DateT.decode(x.toISOString()).value).toEqual(x)
+    })
+    it('decode returns error for invalid string', () => {
+      expect(DateT.decode('abc').isLeft()).toBe(true)
+    })
+    it('decode returns error for object', () => {
+      expect(DateT.decode({}).isLeft()).toBe(true)
     })
     it('encode returns identity', () => {
       const x = new Date()
