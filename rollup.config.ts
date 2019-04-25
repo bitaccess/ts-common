@@ -1,4 +1,4 @@
-import base from '@faast/ts-config/lib/library/rollup.config'
+import base from '@faast/ts-config/library/rollup.config'
 
 const pkg = require('./package.json')
 

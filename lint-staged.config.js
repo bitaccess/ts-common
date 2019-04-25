@@ -1,4 +1,4 @@
-const base = require('@faast/ts-config/lib/library/lint-staged.config.js')
+const base = require('@faast/ts-config/library/lint-staged.config.js')
 
 module.exports = Object.assign({}, base, {
   // overrides here

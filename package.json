@@ -2,6 +2,12 @@
   "name": "faast-ts-config-library-template",
   "version": "0.0.1",
   "description": "Template for typescript library",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/go-faast/faast-ts-common.git"
+  },
+  "author": "Dylan Seago <dylan@bitaccess.co>",
   "main": "dist/index.umd.js",
   "module": "dist/index.es5.js",
   "typings": "dist/types/index.d.ts",
@@ -14,7 +20,7 @@
   },
   "scripts": {
     "lint": "tslint --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
-    "docs": "typedoc --options typedoc.json",
+    "docs": "typedoc --options typedoc.js",
     "prebuild": "rimraf dist",
     "build": "tsc --build ./tsconfig.build.json && rollup -c rollup.config.ts && npm run docs",
     "start": "rollup -c rollup.config.ts -w",
@@ -27,12 +33,9 @@
     "postversion": "git push && git push --tags"
   },
   "devDependencies": {
-    "@types/lodash.camelcase": "^4.3.6",
+    "@faast/ts-config": "github:go-faast/faast-ts-config",
     "@types/jest": "^23.3.2",
-    "@types/lodash": "^4.14.123",
     "@types/node": "^10.11.0",
-    "@types/rollup-plugin-json": "^3.0.2",
-    "@types/rollup-plugin-sourcemaps": "^0.4.1",
     "coveralls": "^3.0.2",
     "faast-ts-config": "github:go-faast/faast-ts-config",
     "jest": "^23.6.0",
