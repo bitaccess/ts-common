@@ -37,10 +37,11 @@
     "io-ts": "^1.8.5"
   },
   "devDependencies": {
-    "@faast/ts-config": "github:go-faast/faast-ts-config#v1.1.5",
+    "@faast/ts-config": "github:go-faast/faast-ts-config#v1.1.6",
     "@types/jest": "^23.3.2",
     "@types/node": "^10.11.0",
     "coveralls": "^3.0.2",
+    "husky": "^2.1.0",
     "io-ts": "^1.8.5",
     "jest": "^23.6.0",
     "jest-config": "^23.6.0",
