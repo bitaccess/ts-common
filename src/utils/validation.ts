@@ -1,20 +1,8 @@
+import { Context, ValidationError, UnionType, IntersectionType, Type } from 'io-ts'
 import { Reporter } from 'io-ts/lib/Reporter'
-import { Context, getFunctionName, ValidationError, UnionType, IntersectionType, Type } from 'io-ts'
+import { stringify } from './string'
 
 export { PathReporter } from 'io-ts/lib/PathReporter'
-
-function stringify(v: any): string {
-  if (typeof v === 'function') {
-    return getFunctionName(v)
-  }
-  if (typeof v === 'number' && !isFinite(v)) {
-    if (isNaN(v)) {
-      return 'NaN'
-    }
-    return v > 0 ? 'Infinity' : '-Infinity'
-  }
-  return JSON.stringify(v)
-}
 
 function getContextPath(context: Context): string {
   return context
@@ -27,8 +15,8 @@ function getContextPath(context: Context): string {
     .join('.')
 }
 
-function getMessage(e: ValidationError): string {
-  const expectedType = e.context[e.context.length - 1].type.name
+export function getMessage(e: ValidationError): string {
+  const expectedType = e.context.length > 0 ? e.context[e.context.length - 1].type.name : ''
   const contextPath = getContextPath(e.context)
   const expectedMessage = expectedType !== contextPath ? `${expectedType} for ${contextPath}` : expectedType
   return e.message !== undefined ? e.message : `Expected type ${expectedMessage}, but got: ${stringify(e.value)}`
