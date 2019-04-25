@@ -1,7 +1,7 @@
 {
-  "name": "faast-ts-config-library-template",
+  "name": "@faast/ts-common",
   "version": "0.1.0",
-  "description": "Template for typescript library",
+  "description": "Common typescript types and utils used by faast",
   "license": "MIT",
   "repository": {
     "type": "git",
