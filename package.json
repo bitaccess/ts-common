@@ -1,6 +1,6 @@
 {
   "name": "faast-ts-config-library-template",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Template for typescript library",
   "license": "MIT",
   "repository": {
