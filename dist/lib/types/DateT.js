@@ -15,7 +15,23 @@ import * as t from 'io-ts';
 var DateType = (function (_super) {
     __extends(DateType, _super);
     function DateType() {
-        var _this = _super.call(this, 'Date', function (u) { return u instanceof Date; }, function (u, c) { return (_this.is(u) ? t.success(u) : t.failure(u, c)); }, t.identity) || this;
+        var _this = _super.call(this, 'Date', function (u) { return u instanceof Date; }, function (u, c) {
+            if (_this.is(u)) {
+                return t.success(u);
+            }
+            else if (t.number.is(u) || t.string.is(u)) {
+                var date = new Date(u);
+                if (Number.isNaN(date.getTime())) {
+                    return t.failure(u, c);
+                }
+                else {
+                    return t.success(date);
+                }
+            }
+            else {
+                return t.failure(u, c);
+            }
+        }, t.identity) || this;
         _this._tag = 'DateType';
         return _this;
     }

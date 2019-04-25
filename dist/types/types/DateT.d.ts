@@ -1,5 +1,5 @@
 import * as t from 'io-ts';
-export declare class DateType extends t.Type<Date, Date, unknown> {
+export declare class DateType extends t.Type<Date> {
     readonly _tag: 'DateType';
     constructor();
 }

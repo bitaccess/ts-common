@@ -1,4 +1,4 @@
-import { UnionType, IntersectionType, getFunctionName, success, failure, identity, Type, union, null, undefined as undefined$1, keyof, intersection, type, partial } from 'io-ts';
+import { UnionType, IntersectionType, getFunctionName, success, number, string, failure, identity, Type, union, null, undefined as undefined$1, keyof, intersection, type, partial } from 'io-ts';
 
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
@@ -32,7 +32,23 @@ function __extends(d, b) {
 var DateType = (function (_super) {
     __extends(DateType, _super);
     function DateType() {
-        var _this = _super.call(this, 'Date', function (u) { return u instanceof Date; }, function (u, c) { return (_this.is(u) ? success(u) : failure(u, c)); }, identity) || this;
+        var _this = _super.call(this, 'Date', function (u) { return u instanceof Date; }, function (u, c) {
+            if (_this.is(u)) {
+                return success(u);
+            }
+            else if (number.is(u) || string.is(u)) {
+                var date = new Date(u);
+                if (Number.isNaN(date.getTime())) {
+                    return failure(u, c);
+                }
+                else {
+                    return success(date);
+                }
+            }
+            else {
+                return failure(u, c);
+            }
+        }, identity) || this;
         _this._tag = 'DateType';
         return _this;
     }
