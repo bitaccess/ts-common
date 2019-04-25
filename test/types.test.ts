@@ -1,7 +1,5 @@
 import * as t from 'io-ts'
-import {
-  DateT, nullable, optional, enumCodec, requiredOptionalCodec, extendCodec,
-} from '../src'
+import { DateT, nullable, optional, enumCodec, requiredOptionalCodec, extendCodec } from '../src'
 
 describe('types', () => {
   describe('DateT', () => {
@@ -99,7 +97,7 @@ describe('types', () => {
       {
         c: t.number,
       },
-      'Example'
+      'Example',
     )
     it('has correct name', () => {
       expect(ExampleT.name).toBe('Example')
@@ -115,9 +113,12 @@ describe('types', () => {
     })
   })
   describe('extendCodec', () => {
-    const ParentT = t.type({
-      p: t.string,
-    }, 'Parent')
+    const ParentT = t.type(
+      {
+        p: t.string,
+      },
+      'Parent',
+    )
     describe('all args provided', () => {
       const ChildT = extendCodec(
         ParentT,
@@ -128,7 +129,7 @@ describe('types', () => {
         {
           c: t.number,
         },
-        'Child'
+        'Child',
       )
       it('has correct name', () => {
         expect(ChildT.name).toBe('Child')
@@ -153,7 +154,7 @@ describe('types', () => {
           a: t.string,
           b: t.number,
         },
-        'Child'
+        'Child',
       )
       it('has correct name', () => {
         expect(ChildT.name).toBe('Child')
@@ -178,7 +179,7 @@ describe('types', () => {
         {
           c: t.number,
         },
-        'Child'
+        'Child',
       )
       it('has correct name', () => {
         expect(ChildT.name).toBe('Child')
@@ -194,12 +195,7 @@ describe('types', () => {
       })
     })
     describe('required and optional arg empty', () => {
-      const ChildT = extendCodec(
-        ParentT,
-        {},
-        {},
-        'Child'
-      )
+      const ChildT = extendCodec(ParentT, {}, {}, 'Child')
       it('is equivalent to parent', () => {
         expect(ChildT).toBe(ParentT)
       })

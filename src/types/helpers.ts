@@ -35,26 +35,36 @@ export function requiredOptionalCodec<A extends t.Props, B extends t.Props>(requ
  * @param optional The optional props to add
  * @param name The name of the type
  */
-export function extendCodec<P extends t.Mixed>(
-  parent: P, required: {}, name: string,
-): P
+export function extendCodec<P extends t.Mixed>(parent: P, required: {}, name: string): P
 export function extendCodec<P extends t.Mixed, R extends t.Props>(
-  parent: P, required: R, name: string,
+  parent: P,
+  required: R,
+  name: string,
 ): t.IntersectionC<[P, t.TypeC<R>]>
-export function extendCodec<P extends t.Mixed>(
-  parent: P, required: {}, optional: {}, name: string,
-): P
+export function extendCodec<P extends t.Mixed>(parent: P, required: {}, optional: {}, name: string): P
 export function extendCodec<P extends t.Mixed, O extends t.Props>(
-  parent: P, required: {}, optional: O, name: string,
+  parent: P,
+  required: {},
+  optional: O,
+  name: string,
 ): t.IntersectionC<[P, t.PartialC<O>]>
 export function extendCodec<P extends t.Mixed, R extends t.Props>(
-  parent: P, required: R, optional: {}, name: string,
+  parent: P,
+  required: R,
+  optional: {},
+  name: string,
 ): t.IntersectionC<[P, t.TypeC<R>]>
 export function extendCodec<P extends t.Mixed, R extends t.Props, O extends t.Props>(
-  parent: P, required: R, optional: O, name: string,
+  parent: P,
+  required: R,
+  optional: O,
+  name: string,
 ): t.IntersectionC<[P, t.TypeC<R>, t.PartialC<O>]>
 export function extendCodec<P extends t.Mixed, R extends t.Props, O extends t.Props>(
-  parent: P, required: R | {}, optional: O | {} | string, name?: string,
+  parent: P,
+  required: R | {},
+  optional: O | {} | string,
+  name?: string,
 ): any {
   if (typeof optional === 'string') {
     name = optional

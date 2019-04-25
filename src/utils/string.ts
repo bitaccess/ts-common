@@ -17,5 +17,5 @@ export function stringify(v: any): string {
 }
 
 export function capitalizeFirst(s: string): string {
-  return s.charAt(0).toUpperCase() + s.slice(1);
+  return s.charAt(0).toUpperCase() + s.slice(1)
 }

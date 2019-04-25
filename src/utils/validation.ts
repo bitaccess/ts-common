@@ -23,7 +23,7 @@ export function getMessage(e: ValidationError): string {
 }
 
 export const SimpleReporter: Reporter<Array<string>> = {
-  report: validation => validation.fold(es => es.map(getMessage), () => ['No errors!'])
+  report: validation => validation.fold(es => es.map(getMessage), () => ['No errors!']),
 }
 
 /**

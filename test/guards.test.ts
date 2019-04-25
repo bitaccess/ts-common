@@ -1,7 +1,5 @@
 import * as t from 'io-ts'
-import {
-  isObject, isEmptyObject, isNull, isUndefined, isNil, isType, isNumber, isString, isArray,
-} from '../src'
+import { isObject, isEmptyObject, isNull, isUndefined, isNil, isType, isNumber, isString, isArray } from '../src'
 
 describe('guards', () => {
   describe('codec', () => {
@@ -17,10 +15,12 @@ describe('guards', () => {
           a: t.number,
           b: t.string,
         })
-        expect(isType(customType, {
-          a: 5,
-          b: '5',
-        })).toBe(true)
+        expect(
+          isType(customType, {
+            a: 5,
+            b: '5',
+          }),
+        ).toBe(true)
       })
       it('returns false for invalid custom type', () => {
         const customType = t.type({

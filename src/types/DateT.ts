@@ -20,7 +20,7 @@ export class DateType extends t.Type<Date> {
           return t.failure(u, c)
         }
       },
-      t.identity
+      t.identity,
     )
   }
 }

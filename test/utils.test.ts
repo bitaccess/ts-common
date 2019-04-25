@@ -38,7 +38,7 @@ describe('utils', () => {
         expect(stringify(undefined)).toBe('undefined')
       })
       it('correctly stringifies arrays', () => {
-        let x = [1,'a']
+        let x = [1, 'a']
         expect(stringify(x)).toBe(JSON.stringify(x))
       })
       it('correctly stringifies objects', () => {
@@ -89,6 +89,6 @@ function validationError(message?: string): t.ValidationError {
   return {
     value: null,
     message,
-    context: []
+    context: [],
   }
 }
