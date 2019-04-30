@@ -1,6 +1,6 @@
 {
   "name": "@faast/ts-common",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Common typescript types and utils used by faast",
   "license": "MIT",
   "repository": {
