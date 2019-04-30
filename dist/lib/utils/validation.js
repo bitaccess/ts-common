@@ -23,7 +23,7 @@ export function getMessage(e) {
     return e.message !== undefined ? e.message : "Expected type " + expectedMessage + ", but got: " + stringify(e.value);
 }
 export var SimpleReporter = {
-    report: function (validation) { return validation.fold(function (es) { return es.map(getMessage); }, function () { return ['No errors!']; }); }
+    report: function (validation) { return validation.fold(function (es) { return es.map(getMessage); }, function () { return ['No errors!']; }); },
 };
 export function assertType(typeCodec, value, description) {
     if (description === void 0) { description = 'type'; }
