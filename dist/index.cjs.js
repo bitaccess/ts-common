@@ -1,24 +1,28 @@
-import { UnionType, IntersectionType, getFunctionName, Type, success, number, string, failure, identity, union, nullType, undefined as undefined$1, keyof, intersection, type, partial } from 'io-ts';
+'use strict';
 
-class DateType extends Type {
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var t = require('io-ts');
+
+class DateType extends t.Type {
     constructor() {
         super('Date', (u) => u instanceof Date, (u, c) => {
             if (this.is(u)) {
-                return success(u);
+                return t.success(u);
             }
-            else if (number.is(u) || string.is(u)) {
+            else if (t.number.is(u) || t.string.is(u)) {
                 const date = new Date(u);
                 if (Number.isNaN(date.getTime())) {
-                    return failure(u, c);
+                    return t.failure(u, c);
                 }
                 else {
-                    return success(date);
+                    return t.success(date);
                 }
             }
             else {
-                return failure(u, c);
+                return t.failure(u, c);
             }
-        }, identity);
+        }, t.identity);
         this._tag = 'DateType';
     }
 }
@@ -53,17 +57,17 @@ function isType(codec, x) {
     return codec.is(x);
 }
 
-const nullable = (codec) => union([codec, nullType], `${codec.name}Nullable`);
-const optional = (codec) => union([codec, undefined$1], `${codec.name}Optional`);
+const nullable = (codec) => t.union([codec, t.nullType], `${codec.name}Nullable`);
+const optional = (codec) => t.union([codec, t.undefined], `${codec.name}Optional`);
 function enumCodec(e, name) {
     const keyed = {};
     Object.values(e).forEach(v => {
         keyed[v] = null;
     });
-    return keyof(keyed, name);
+    return t.keyof(keyed, name);
 }
 function requiredOptionalCodec(required, optional, name) {
-    return intersection([type(required, `${name}Req`), partial(optional, `${name}Opt`)], name);
+    return t.intersection([t.type(required, `${name}Req`), t.partial(optional, `${name}Opt`)], name);
 }
 function extendCodec(parent, required, optional, name) {
     if (typeof optional === 'string') {
@@ -78,12 +82,12 @@ function extendCodec(parent, required, optional, name) {
         return parent;
     }
     if (noRequired) {
-        return intersection([parent, partial(optional, nameOpt)], name);
+        return t.intersection([parent, t.partial(optional, nameOpt)], name);
     }
     if (noOptional) {
-        return intersection([parent, type(required, nameReq)], name);
+        return t.intersection([parent, t.type(required, nameReq)], name);
     }
-    return intersection([parent, type(required, nameReq), partial(optional, nameOpt)], name);
+    return t.intersection([parent, t.type(required, nameReq), t.partial(optional, nameOpt)], name);
 }
 
 function stringify(v) {
@@ -91,7 +95,7 @@ function stringify(v) {
         return 'undefined';
     }
     if (typeof v === 'function') {
-        return getFunctionName(v);
+        return t.getFunctionName(v);
     }
     if (typeof v === 'number' && !isFinite(v)) {
         if (isNaN(v)) {
@@ -107,13 +111,13 @@ function capitalizeFirst(s) {
 
 function getContextPath(context) {
     return context
-        .filter(({ type: type$$1 }, i) => {
+        .filter(({ type }, i) => {
         if (i === 0)
             return true;
         const previousType = context[i - 1].type;
-        return !(previousType instanceof UnionType || previousType instanceof IntersectionType);
+        return !(previousType instanceof t.UnionType || previousType instanceof t.IntersectionType);
     })
-        .map(({ key, type: type$$1 }) => (key ? key : type$$1.name))
+        .map(({ key, type }) => (key ? key : type.name))
         .join('.');
 }
 function getMessage(e) {
@@ -133,5 +137,25 @@ function assertType(typeCodec, value, description = 'type') {
     return validation.value;
 }
 
-export { DateType, DateT, nullable, optional, enumCodec, requiredOptionalCodec, extendCodec, getMessage, SimpleReporter, assertType, stringify, capitalizeFirst, isObject, isEmptyObject, isUndefined, isNull, isNil, isString, isNumber, isArray, isType };
-//# sourceMappingURL=index.es.js.map
+exports.DateType = DateType;
+exports.DateT = DateT;
+exports.nullable = nullable;
+exports.optional = optional;
+exports.enumCodec = enumCodec;
+exports.requiredOptionalCodec = requiredOptionalCodec;
+exports.extendCodec = extendCodec;
+exports.getMessage = getMessage;
+exports.SimpleReporter = SimpleReporter;
+exports.assertType = assertType;
+exports.stringify = stringify;
+exports.capitalizeFirst = capitalizeFirst;
+exports.isObject = isObject;
+exports.isEmptyObject = isEmptyObject;
+exports.isUndefined = isUndefined;
+exports.isNull = isNull;
+exports.isNil = isNil;
+exports.isString = isString;
+exports.isNumber = isNumber;
+exports.isArray = isArray;
+exports.isType = isType;
+//# sourceMappingURL=index.cjs.js.map

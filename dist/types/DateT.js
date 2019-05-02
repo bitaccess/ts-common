@@ -1,35 +1,12 @@
-"use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var t = __importStar(require("io-ts"));
-var DateType = (function (_super) {
-    __extends(DateType, _super);
-    function DateType() {
-        var _this = _super.call(this, 'Date', function (u) { return u instanceof Date; }, function (u, c) {
-            if (_this.is(u)) {
+import * as t from 'io-ts';
+export class DateType extends t.Type {
+    constructor() {
+        super('Date', (u) => u instanceof Date, (u, c) => {
+            if (this.is(u)) {
                 return t.success(u);
             }
             else if (t.number.is(u) || t.string.is(u)) {
-                var date = new Date(u);
+                const date = new Date(u);
                 if (Number.isNaN(date.getTime())) {
                     return t.failure(u, c);
                 }
@@ -40,12 +17,9 @@ var DateType = (function (_super) {
             else {
                 return t.failure(u, c);
             }
-        }, t.identity) || this;
-        _this._tag = 'DateType';
-        return _this;
+        }, t.identity);
+        this._tag = 'DateType';
     }
-    return DateType;
-}(t.Type));
-exports.DateType = DateType;
-exports.DateT = new DateType();
+}
+export const DateT = new DateType();
 //# sourceMappingURL=DateT.js.map
