@@ -1,7 +1,7 @@
 import * as t from 'io-ts'
 import { isEmptyObject } from '#/guards'
 
-export const nullable = <T extends t.Mixed>(codec: T) => t.union([codec, t.null], `${codec.name}Nullable`)
+export const nullable = <T extends t.Mixed>(codec: T) => t.union([codec, t.nullType], `${codec.name}Nullable`)
 export const optional = <T extends t.Mixed>(codec: T) => t.union([codec, t.undefined], `${codec.name}Optional`)
 
 /**

@@ -2,8 +2,6 @@ import { Context, ValidationError, UnionType, IntersectionType, Type } from 'io-
 import { Reporter } from 'io-ts/lib/Reporter'
 import { stringify } from './string'
 
-export { PathReporter } from 'io-ts/lib/PathReporter'
-
 function getContextPath(context: Context): string {
   return context
     .filter(({ type }, i) => {
