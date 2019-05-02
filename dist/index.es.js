@@ -1,4 +1,4 @@
-import { UnionType, IntersectionType, getFunctionName, success, number, string, failure, identity, Type, union, null, undefined as undefined$1, keyof, intersection, type, partial } from 'io-ts';
+import { UnionType, IntersectionType, getFunctionName, union, null, undefined as undefined$1, keyof, intersection, type, partial, success, number, string, failure, identity, Type } from 'io-ts';
 
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
@@ -2762,4 +2762,4 @@ function assertType(typeCodec, value, description) {
 }
 
 export { DateType, DateT, nullable, optional, enumCodec, requiredOptionalCodec, extendCodec, getMessage, SimpleReporter, assertType, PathReporter_3 as PathReporter, stringify, capitalizeFirst, isObject, isEmptyObject, isUndefined, isNull, isNil, isString, isNumber, isArray, isType };
-//# sourceMappingURL=index.es5.js.map
+//# sourceMappingURL=index.es.js.map

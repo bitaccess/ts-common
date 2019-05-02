@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -11,7 +12,15 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-import * as t from 'io-ts';
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var t = __importStar(require("io-ts"));
 var DateType = (function (_super) {
     __extends(DateType, _super);
     function DateType() {
@@ -37,6 +46,6 @@ var DateType = (function (_super) {
     }
     return DateType;
 }(t.Type));
-export { DateType };
-export var DateT = new DateType();
+exports.DateType = DateType;
+exports.DateT = new DateType();
 //# sourceMappingURL=DateT.js.map
