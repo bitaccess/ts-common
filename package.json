@@ -8,9 +8,10 @@
     "url": "git+ssh://git@github.com/go-faast/faast-ts-common.git"
   },
   "author": "Dylan Seago <dylan@bitaccess.co>",
-  "main": "dist/index.umd.js",
+  "main": "dist/index.js",
   "module": "dist/index.es5.js",
-  "typings": "dist/types/index.d.ts",
+  "browser": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist/",
     "src/"
@@ -36,7 +37,7 @@
     "io-ts": "^1.8.5"
   },
   "devDependencies": {
-    "@faast/ts-config": "^1.1.10",
+    "@faast/ts-config": "^1.2.0",
     "@types/jest": "^23.3.2",
     "@types/node": "^10.11.0",
     "coveralls": "^3.0.2",
