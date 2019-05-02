@@ -9,7 +9,7 @@
   },
   "author": "Dylan Seago <dylan@bitaccess.co>",
   "main": "dist/index.js",
-  "module": "dist/index.es5.js",
+  "module": "dist/index.es.js",
   "browser": "dist/index.umd.js",
   "types": "dist/index.d.ts",
   "files": [
