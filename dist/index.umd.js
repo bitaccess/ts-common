@@ -28,7 +28,7 @@
   }
   const DateT = new DateType();
 
-  const Logger = t.type({
+  const LoggerCodec = t.type({
       error: t.Function,
       warn: t.Function,
       info: t.Function,
@@ -36,6 +36,13 @@
       debug: t.Function,
       trace: t.Function,
   }, 'Logger');
+  class LoggerType extends t.Type {
+      constructor() {
+          super('Logger', (u) => LoggerCodec.is(u), (u, c) => (this.is(u) ? t.success(u) : t.failure(u, c)), t.identity);
+          this._tag = 'LoggerType';
+      }
+  }
+  const Logger = new LoggerType();
 
   function isObject(x) {
       return typeof x === 'object' && x !== null && !Array.isArray(x);

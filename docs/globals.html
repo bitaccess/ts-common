@@ -910,17 +910,26 @@ img { max-width: 100%; }
 		<li class=" tsd-kind-class tsd-has-type-parameter">
 			<a href="classes/datetype.html" class="tsd-kind-icon">Date<wbr>Type</a>
 		</li>
+		<li class=" tsd-kind-class tsd-has-type-parameter tsd-is-not-exported">
+			<a href="classes/loggertype.html" class="tsd-kind-icon">Logger<wbr>Type</a>
+		</li>
 		<li class=" tsd-kind-interface tsd-has-type-parameter">
 			<a href="interfaces/datec.html" class="tsd-kind-icon">DateC</a>
 		</li>
 		<li class=" tsd-kind-interface">
 			<a href="interfaces/logger.html" class="tsd-kind-icon">Logger</a>
 		</li>
+		<li class=" tsd-kind-interface tsd-has-type-parameter">
+			<a href="interfaces/loggerc.html" class="tsd-kind-icon">LoggerC</a>
+		</li>
 		<li class=" tsd-kind-type-alias">
 			<a href="globals.html#loggerfn" class="tsd-kind-icon">Logger<wbr>Fn</a>
 		</li>
 		<li class=" tsd-kind-variable">
 			<a href="globals.html#datet" class="tsd-kind-icon">DateT</a>
+		</li>
+		<li class=" tsd-kind-variable tsd-is-not-exported">
+			<a href="globals.html#loggercodec" class="tsd-kind-icon">Logger<wbr>Codec</a>
 		</li>
 		<li class=" tsd-kind-function tsd-has-type-parameter">
 			<a href="globals.html#asserttype" class="tsd-kind-icon">assert<wbr>Type</a>
@@ -997,6 +1006,7 @@ img { max-width: 100%; }
 						<h3>Classes</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/datetype.html" class="tsd-kind-icon">Date<wbr>Type</a></li>
+							<li class="tsd-kind-class tsd-has-type-parameter tsd-is-not-exported"><a href="classes/loggertype.html" class="tsd-kind-icon">Logger<wbr>Type</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
@@ -1004,6 +1014,7 @@ img { max-width: 100%; }
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/datec.html" class="tsd-kind-icon">DateC</a></li>
 							<li class="tsd-kind-interface"><a href="interfaces/logger.html" class="tsd-kind-icon">Logger</a></li>
+							<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/loggerc.html" class="tsd-kind-icon">LoggerC</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
@@ -1016,6 +1027,7 @@ img { max-width: 100%; }
 						<h3>Variables</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-variable"><a href="globals.html#datet" class="tsd-kind-icon">DateT</a></li>
+							<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#loggercodec" class="tsd-kind-icon">Logger<wbr>Codec</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
@@ -1060,7 +1072,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Logger<wbr>Fn<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/types/Logger.ts#L14">src/types/Logger.ts:14</a></li>
+						<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/types/Logger.ts#L7">src/types/Logger.ts:7</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-type-declaration">
@@ -1094,7 +1106,17 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">DateT<span class="tsd-signature-symbol">:</span> <a href="interfaces/datec.html" class="tsd-signature-type">DateC</a><span class="tsd-signature-symbol"> =&nbsp;new DateType()</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/types/DateT.ts#L29">src/types/DateT.ts:29</a></li>
+						<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/types/DateT.ts#L29">src/types/DateT.ts:29</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
+				<a name="loggercodec" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> Logger<wbr>Codec</h3>
+				<div class="tsd-signature tsd-kind-icon">Logger<wbr>Codec<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">TypeC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;t.type({error: t.Function,warn: t.Function,info: t.Function,log: t.Function,debug: t.Function,trace: t.Function,},&#x27;Logger&#x27;,)</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/types/Logger.ts#L18">src/types/Logger.ts:18</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1111,7 +1133,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/utils/validation.ts#L35">src/utils/validation.ts:35</a></li>
+								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/utils/validation.ts#L35">src/utils/validation.ts:35</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1163,7 +1185,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/utils/string.ts#L19">src/utils/string.ts:19</a></li>
+								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/utils/string.ts#L19">src/utils/string.ts:19</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1186,7 +1208,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/types/helpers.ts#L10">src/types/helpers.ts:10</a></li>
+								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/types/helpers.ts#L10">src/types/helpers.ts:10</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1228,7 +1250,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/types/helpers.ts#L38">src/types/helpers.ts:38</a></li>
+								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/types/helpers.ts#L38">src/types/helpers.ts:38</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1268,7 +1290,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/types/helpers.ts#L39">src/types/helpers.ts:39</a></li>
+								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/types/helpers.ts#L39">src/types/helpers.ts:39</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1297,7 +1319,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/types/helpers.ts#L44">src/types/helpers.ts:44</a></li>
+								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/types/helpers.ts#L44">src/types/helpers.ts:44</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1326,7 +1348,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/types/helpers.ts#L45">src/types/helpers.ts:45</a></li>
+								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/types/helpers.ts#L45">src/types/helpers.ts:45</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1358,7 +1380,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/types/helpers.ts#L51">src/types/helpers.ts:51</a></li>
+								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/types/helpers.ts#L51">src/types/helpers.ts:51</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1390,7 +1412,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/types/helpers.ts#L57">src/types/helpers.ts:57</a></li>
+								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/types/helpers.ts#L57">src/types/helpers.ts:57</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1434,7 +1456,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/utils/validation.ts#L5">src/utils/validation.ts:5</a></li>
+								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/utils/validation.ts#L5">src/utils/validation.ts:5</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1457,7 +1479,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/utils/validation.ts#L16">src/utils/validation.ts:16</a></li>
+								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/utils/validation.ts#L16">src/utils/validation.ts:16</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1480,7 +1502,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/guards/basic.ts#L29">src/guards/basic.ts:29</a></li>
+								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/guards/basic.ts#L29">src/guards/basic.ts:29</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1503,7 +1525,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/guards/basic.ts#L5">src/guards/basic.ts:5</a></li>
+								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/guards/basic.ts#L5">src/guards/basic.ts:5</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1526,7 +1548,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/guards/basic.ts#L17">src/guards/basic.ts:17</a></li>
+								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/guards/basic.ts#L17">src/guards/basic.ts:17</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1549,7 +1571,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/guards/basic.ts#L13">src/guards/basic.ts:13</a></li>
+								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/guards/basic.ts#L13">src/guards/basic.ts:13</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1572,7 +1594,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/guards/basic.ts#L25">src/guards/basic.ts:25</a></li>
+								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/guards/basic.ts#L25">src/guards/basic.ts:25</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1595,7 +1617,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/guards/basic.ts#L1">src/guards/basic.ts:1</a></li>
+								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/guards/basic.ts#L1">src/guards/basic.ts:1</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1618,7 +1640,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/guards/basic.ts#L21">src/guards/basic.ts:21</a></li>
+								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/guards/basic.ts#L21">src/guards/basic.ts:21</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1641,7 +1663,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/guards/codec.ts#L3">src/guards/codec.ts:3</a></li>
+								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/guards/codec.ts#L3">src/guards/codec.ts:3</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1673,7 +1695,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/guards/basic.ts#L9">src/guards/basic.ts:9</a></li>
+								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/guards/basic.ts#L9">src/guards/basic.ts:9</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1696,7 +1718,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/types/helpers.ts#L4">src/types/helpers.ts:4</a></li>
+								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/types/helpers.ts#L4">src/types/helpers.ts:4</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1725,7 +1747,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/types/helpers.ts#L5">src/types/helpers.ts:5</a></li>
+								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/types/helpers.ts#L5">src/types/helpers.ts:5</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1754,7 +1776,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/types/helpers.ts#L26">src/types/helpers.ts:26</a></li>
+								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/types/helpers.ts#L26">src/types/helpers.ts:26</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1807,7 +1829,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/utils/string.ts#L3">src/utils/string.ts:3</a></li>
+								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/utils/string.ts#L3">src/utils/string.ts:3</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1830,7 +1852,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/test/utils.test.ts#L88">test/utils.test.ts:88</a></li>
+								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/test/utils.test.ts#L88">test/utils.test.ts:88</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1852,7 +1874,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Simple<wbr>Reporter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/utils/validation.ts#L23">src/utils/validation.ts:23</a></li>
+						<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/utils/validation.ts#L23">src/utils/validation.ts:23</a></li>
 					</ul>
 				</aside>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-object-literal">
@@ -1865,7 +1887,7 @@ img { max-width: 100%; }
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/8df1263/src/utils/validation.ts#L24">src/utils/validation.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/5dbedbf/src/utils/validation.ts#L24">src/utils/validation.ts:24</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>

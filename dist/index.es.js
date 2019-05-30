@@ -1,4 +1,4 @@
-import { getFunctionName, UnionType, IntersectionType, Type, success, number, string, failure, identity, union, nullType, undefined as undefined$1, keyof, intersection, type, partial, Function } from 'io-ts';
+import { UnionType, IntersectionType, getFunctionName, Type, success, number, string, failure, identity, union, nullType, undefined as undefined$1, keyof, intersection, type, partial, Function } from 'io-ts';
 
 class DateType extends Type {
     constructor() {
@@ -24,7 +24,7 @@ class DateType extends Type {
 }
 const DateT = new DateType();
 
-const Logger = type({
+const LoggerCodec = type({
     error: Function,
     warn: Function,
     info: Function,
@@ -32,6 +32,13 @@ const Logger = type({
     debug: Function,
     trace: Function,
 }, 'Logger');
+class LoggerType extends Type {
+    constructor() {
+        super('Logger', (u) => LoggerCodec.is(u), (u, c) => (this.is(u) ? success(u) : failure(u, c)), identity);
+        this._tag = 'LoggerType';
+    }
+}
+const Logger = new LoggerType();
 
 function isObject(x) {
     return typeof x === 'object' && x !== null && !Array.isArray(x);

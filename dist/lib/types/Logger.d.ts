@@ -1,14 +1,6 @@
 import * as t from 'io-ts';
-export declare const Logger: t.TypeC<{
-    error: t.FunctionC;
-    warn: t.FunctionC;
-    info: t.FunctionC;
-    log: t.FunctionC;
-    debug: t.FunctionC;
-    trace: t.FunctionC;
-}>;
 export declare type LoggerFn = (...args: any[]) => void;
-export interface Logger extends t.TypeOf<typeof Logger> {
+export interface Logger {
     error: LoggerFn;
     warn: LoggerFn;
     info: LoggerFn;
@@ -16,3 +8,11 @@ export interface Logger extends t.TypeOf<typeof Logger> {
     debug: LoggerFn;
     trace: LoggerFn;
 }
+declare class LoggerType extends t.Type<Logger> {
+    readonly _tag: 'LoggerType';
+    constructor();
+}
+export interface LoggerC extends LoggerType {
+}
+export declare const Logger: LoggerC;
+export {};
