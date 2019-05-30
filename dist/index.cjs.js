@@ -28,6 +28,15 @@ class DateType extends t.Type {
 }
 const DateT = new DateType();
 
+const Logger = t.type({
+    error: t.Function,
+    warn: t.Function,
+    info: t.Function,
+    log: t.Function,
+    debug: t.Function,
+    trace: t.Function,
+}, 'Logger');
+
 function isObject(x) {
     return typeof x === 'object' && x !== null && !Array.isArray(x);
 }
@@ -139,6 +148,7 @@ function assertType(typeCodec, value, description = 'type') {
 
 exports.DateType = DateType;
 exports.DateT = DateT;
+exports.Logger = Logger;
 exports.nullable = nullable;
 exports.optional = optional;
 exports.enumCodec = enumCodec;

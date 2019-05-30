@@ -1,4 +1,4 @@
-import { UnionType, IntersectionType, getFunctionName, Type, success, number, string, failure, identity, union, nullType, undefined as undefined$1, keyof, intersection, type, partial } from 'io-ts';
+import { getFunctionName, UnionType, IntersectionType, Type, success, number, string, failure, identity, union, nullType, undefined as undefined$1, keyof, intersection, type, partial, Function } from 'io-ts';
 
 class DateType extends Type {
     constructor() {
@@ -23,6 +23,15 @@ class DateType extends Type {
     }
 }
 const DateT = new DateType();
+
+const Logger = type({
+    error: Function,
+    warn: Function,
+    info: Function,
+    log: Function,
+    debug: Function,
+    trace: Function,
+}, 'Logger');
 
 function isObject(x) {
     return typeof x === 'object' && x !== null && !Array.isArray(x);
@@ -133,5 +142,5 @@ function assertType(typeCodec, value, description = 'type') {
     return validation.value;
 }
 
-export { DateType, DateT, nullable, optional, enumCodec, requiredOptionalCodec, extendCodec, getMessage, SimpleReporter, assertType, stringify, capitalizeFirst, isObject, isEmptyObject, isUndefined, isNull, isNil, isString, isNumber, isArray, isType };
+export { DateType, DateT, Logger, nullable, optional, enumCodec, requiredOptionalCodec, extendCodec, getMessage, SimpleReporter, assertType, stringify, capitalizeFirst, isObject, isEmptyObject, isUndefined, isNull, isNil, isString, isNumber, isArray, isType };
 //# sourceMappingURL=index.es.js.map
