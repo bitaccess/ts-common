@@ -44,7 +44,7 @@ describe('types', () => {
     })
     it('encode returns identity', () => {
       const x = new Date()
-      expect(DateT.encode(x)).toEqual(x)
+      expect(DateT.encode(x)).toBe(x)
     })
   })
   describe('Logger', () => {
@@ -66,6 +66,22 @@ describe('types', () => {
       }
       const x = new CustomLogger()
       expect(Logger.is(x)).toBe(true)
+    })
+    it('decode returns success for console', () => {
+      const decoded = Logger.decode(console)
+      expect(decoded.isRight()).toBe(true)
+      expect(decoded.value).toBe(console)
+    })
+    it('codec type and static interface are assignable to each other', () => {
+      let codecType: t.TypeOf<typeof Logger> = console
+      let staticType: Logger = codecType
+      codecType = staticType
+    })
+    it('decode returns error for invalid object', () => {
+      expect(Logger.decode({}).isLeft()).toBe(true)
+    })
+    it('encode returns identity', () => {
+      expect(Logger.encode(console)).toBe(console)
     })
   })
   describe('nullable', () => {
