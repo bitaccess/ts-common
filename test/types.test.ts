@@ -1,5 +1,5 @@
 import * as t from 'io-ts'
-import { DateT, nullable, optional, enumCodec, requiredOptionalCodec, extendCodec } from '../src'
+import { DateT, Logger, nullable, optional, enumCodec, requiredOptionalCodec, extendCodec, assertType } from '../src'
 
 describe('types', () => {
   describe('DateT', () => {
@@ -20,15 +20,21 @@ describe('types', () => {
     })
     it('decode returns success for valid Date', () => {
       const x = new Date()
-      expect(DateT.decode(x).value).toEqual(x)
+      const decoded = DateT.decode(x)
+      expect(decoded.isRight()).toBe(true)
+      expect(decoded.value).toEqual(x)
     })
     it('decode returns success for number', () => {
       const x = new Date()
-      expect(DateT.decode(x.getTime()).value).toEqual(x)
+      const decoded = DateT.decode(x.getTime())
+      expect(decoded.isRight()).toBe(true)
+      expect(decoded.value).toEqual(x)
     })
     it('decode returns success for ISO string date', () => {
       const x = new Date()
-      expect(DateT.decode(x.toISOString()).value).toEqual(x)
+      const decoded = DateT.decode(x.toISOString())
+      expect(decoded.isRight()).toBe(true)
+      expect(decoded.value).toEqual(x)
     })
     it('decode returns error for invalid string', () => {
       expect(DateT.decode('abc').isLeft()).toBe(true)
@@ -39,6 +45,27 @@ describe('types', () => {
     it('encode returns identity', () => {
       const x = new Date()
       expect(DateT.encode(x)).toEqual(x)
+    })
+  })
+  describe('Logger', () => {
+    it('has name Date', () => {
+      expect(Logger.name).toBe('Logger')
+    })
+    it('is returns true for console', () => {
+      const x: Logger = console
+      expect(Logger.is(x)).toBe(true)
+    })
+    it('is returns true for custom implementation', () => {
+      class CustomLogger implements Logger {
+        error = () => {}
+        warn = () => {}
+        info = () => {}
+        log = () => {}
+        debug = () => {}
+        trace = () => {}
+      }
+      const x = new CustomLogger()
+      expect(Logger.is(x)).toBe(true)
     })
   })
   describe('nullable', () => {
