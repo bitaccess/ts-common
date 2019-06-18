@@ -1,5 +1,22 @@
 import * as t from 'io-ts'
+import { map } from 'fp-ts/lib/Record'
 import { isEmptyObject } from '#/guards'
+
+export function partialRecord<KS extends t.KeyofType<any>, T extends t.Any>(
+  k: KS,
+  type: T,
+  name?: string,
+): t.PartialC<Record<keyof KS['keys'], T>> {
+  return t.partial(map(k.keys, () => type) as any, name)
+}
+
+export function autoImplement<T>(getValues: () => T) {
+  return class {
+    constructor() {
+      Object.assign(this, getValues())
+    }
+  } as new () => T
+}
 
 export const nullable = <T extends t.Mixed>(codec: T) => t.union([codec, t.nullType], `${codec.name}Nullable`)
 export const optional = <T extends t.Mixed>(codec: T) => t.union([codec, t.undefined], `${codec.name}Optional`)
