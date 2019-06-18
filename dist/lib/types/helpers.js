@@ -4,10 +4,12 @@ import { isEmptyObject } from '#/guards';
 export function partialRecord(k, type, name) {
     return t.partial(map(k.keys, () => type), name);
 }
-export function autoImplement(getValues) {
+export function autoImplement() {
     return class {
-        constructor() {
-            Object.assign(this, getValues());
+        constructor(values) {
+            if (values) {
+                Object.assign(this, typeof values === 'object' ? values : values());
+            }
         }
     };
 }

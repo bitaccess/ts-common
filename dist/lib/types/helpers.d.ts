@@ -1,6 +1,6 @@
 import * as t from 'io-ts';
 export declare function partialRecord<KS extends t.KeyofType<any>, T extends t.Any>(k: KS, type: T, name?: string): t.PartialC<Record<keyof KS['keys'], T>>;
-export declare function autoImplement<T>(getValues: () => T): new () => T;
+export declare function autoImplement<T extends object>(): new (values?: T | (() => T) | undefined) => T;
 export declare const nullable: <T extends t.Mixed>(codec: T) => t.UnionC<[T, t.NullC]>;
 export declare const optional: <T extends t.Mixed>(codec: T) => t.UnionC<[T, t.UndefinedC]>;
 export declare function enumCodec<E>(e: Object, name: string): t.Type<E>;

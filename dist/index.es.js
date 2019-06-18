@@ -1,4 +1,4 @@
-import { UnionType, IntersectionType, getFunctionName, Type, success, number, string, failure, identity, partial, union, nullType, undefined as undefined$1, keyof, intersection, type, Function } from 'io-ts';
+import { UnionType, IntersectionType, getFunctionName, Type, success, number, string, failure, identity, type, Function, partial, union, nullType, undefined as undefined$1, keyof, intersection } from 'io-ts';
 
 class DateType extends Type {
     constructor() {
@@ -2384,10 +2384,12 @@ function isType(codec, x) {
 function partialRecord(k, type$$1, name) {
     return partial(Record_18(k.keys, () => type$$1), name);
 }
-function autoImplement(getValues) {
+function autoImplement() {
     return class {
-        constructor() {
-            Object.assign(this, getValues());
+        constructor(values) {
+            if (values) {
+                Object.assign(this, typeof values === 'object' ? values : values());
+            }
         }
     };
 }

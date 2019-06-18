@@ -2388,10 +2388,12 @@ function isType(codec, x) {
 function partialRecord(k, type, name) {
     return t.partial(Record_18(k.keys, () => type), name);
 }
-function autoImplement(getValues) {
+function autoImplement() {
     return class {
-        constructor() {
-            Object.assign(this, getValues());
+        constructor(values) {
+            if (values) {
+                Object.assign(this, typeof values === 'object' ? values : values());
+            }
         }
     };
 }
