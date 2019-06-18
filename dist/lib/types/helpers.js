@@ -1,5 +1,16 @@
 import * as t from 'io-ts';
+import { map } from 'fp-ts/lib/Record';
 import { isEmptyObject } from '#/guards';
+export function partialRecord(k, type, name) {
+    return t.partial(map(k.keys, () => type), name);
+}
+export function autoImplement(getValues) {
+    return class {
+        constructor() {
+            Object.assign(this, getValues());
+        }
+    };
+}
 export const nullable = (codec) => t.union([codec, t.nullType], `${codec.name}Nullable`);
 export const optional = (codec) => t.union([codec, t.undefined], `${codec.name}Optional`);
 export function enumCodec(e, name) {
