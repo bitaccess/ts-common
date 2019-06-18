@@ -10,12 +10,14 @@ export function partialRecord<KS extends t.KeyofType<any>, T extends t.Any>(
   return t.partial(map(k.keys, () => type) as any, name)
 }
 
-export function autoImplement<T>(getValues: () => T) {
+export function autoImplement<T extends object>() {
   return class {
-    constructor() {
-      Object.assign(this, getValues())
+    constructor(values?: T | (() => T)) {
+      if (values) {
+        Object.assign(this, typeof values === 'object' ? values : values())
+      }
     }
-  } as new () => T
+  } as new (values?: T | (() => T)) => T
 }
 
 export const nullable = <T extends t.Mixed>(codec: T) => t.union([codec, t.nullType], `${codec.name}Nullable`)
