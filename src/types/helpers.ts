@@ -24,17 +24,6 @@ export const nullable = <T extends t.Mixed>(codec: T) => t.union([codec, t.nullT
 export const optional = <T extends t.Mixed>(codec: T) => t.union([codec, t.undefined], `${codec.name}Optional`)
 
 /**
- * Creates an io-ts runtime type based off a typescript enum `e`
- */
-export function enumCodec<E>(e: Object, name: string): t.Type<E> {
-  const keyed: { [k: string]: null } = {}
-  Object.values(e).forEach(v => {
-    keyed[v] = null
-  })
-  return t.keyof(keyed, name) as any
-}
-
-/**
  * Creates a codec for an object with required and optional params using an intersection
  * codec.
  *
