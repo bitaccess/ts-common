@@ -2399,13 +2399,6 @@
   }
   const nullable = (codec) => t.union([codec, t.nullType], `${codec.name}Nullable`);
   const optional = (codec) => t.union([codec, t.undefined], `${codec.name}Optional`);
-  function enumCodec(e, name) {
-      const keyed = {};
-      Object.values(e).forEach(v => {
-          keyed[v] = null;
-      });
-      return t.keyof(keyed, name);
-  }
   function requiredOptionalCodec(required, optional, name) {
       return t.intersection([t.type(required, `${name}Req`), t.partial(optional, `${name}Opt`)], name);
   }
@@ -2428,6 +2421,32 @@
           return t.intersection([parent, t.type(required, nameReq)], name);
       }
       return t.intersection([parent, t.type(required, nameReq), t.partial(optional, nameOpt)], name);
+  }
+
+  class EnumType extends t.Type {
+      constructor(name, is, validate, encode) {
+          super(name, is, validate, encode);
+          this._tag = 'EnumType';
+      }
+  }
+  function enumCodec(e, name, defaultValue) {
+      const keyed = {};
+      Object.values(e).forEach(v => {
+          keyed[v] = null;
+      });
+      const valueUnion = t.keyof(keyed);
+      return new EnumType(name, (u) => valueUnion.is(u), (u, c) => {
+          const validation = valueUnion.validate(u, c);
+          if (validation.isRight()) {
+              return validation;
+          }
+          else if (typeof defaultValue !== 'undefined' && typeof u === 'string') {
+              return t.success(defaultValue);
+          }
+          else {
+              return t.failure(u, c);
+          }
+      }, t.identity);
   }
 
   function stringify(v) {
@@ -2484,9 +2503,10 @@
   exports.autoImplement = autoImplement;
   exports.nullable = nullable;
   exports.optional = optional;
-  exports.enumCodec = enumCodec;
   exports.requiredOptionalCodec = requiredOptionalCodec;
   exports.extendCodec = extendCodec;
+  exports.EnumType = EnumType;
+  exports.enumCodec = enumCodec;
   exports.getMessage = getMessage;
   exports.SimpleReporter = SimpleReporter;
   exports.assertType = assertType;

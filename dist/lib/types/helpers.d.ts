@@ -3,7 +3,6 @@ export declare function partialRecord<KS extends t.KeyofType<any>, T extends t.A
 export declare function autoImplement<T extends object>(): new (values?: T | (() => T) | undefined) => T;
 export declare const nullable: <T extends t.Mixed>(codec: T) => t.UnionC<[T, t.NullC]>;
 export declare const optional: <T extends t.Mixed>(codec: T) => t.UnionC<[T, t.UndefinedC]>;
-export declare function enumCodec<E>(e: Object, name: string): t.Type<E>;
 export declare function requiredOptionalCodec<A extends t.Props, B extends t.Props>(required: A, optional: B, name: string): t.IntersectionC<[t.TypeC<A>, t.PartialC<B>]>;
 export declare function extendCodec<P extends t.Mixed>(parent: P, required: {}, name: string): P;
 export declare function extendCodec<P extends t.Mixed, R extends t.Props>(parent: P, required: R, name: string): t.IntersectionC<[P, t.TypeC<R>]>;

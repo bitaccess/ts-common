@@ -1,4 +1,4 @@
-import { UnionType, IntersectionType, getFunctionName, Type, success, number, string, failure, identity, type, Function, partial, union, nullType, undefined as undefined$1, keyof, intersection } from 'io-ts';
+import { UnionType, IntersectionType, getFunctionName, Type, success, number, string, failure, identity, type, Function, partial, union, nullType, undefined as undefined$1, intersection, keyof } from 'io-ts';
 
 class DateType extends Type {
     constructor() {
@@ -2395,13 +2395,6 @@ function autoImplement() {
 }
 const nullable = (codec) => union([codec, nullType], `${codec.name}Nullable`);
 const optional = (codec) => union([codec, undefined$1], `${codec.name}Optional`);
-function enumCodec(e, name) {
-    const keyed = {};
-    Object.values(e).forEach(v => {
-        keyed[v] = null;
-    });
-    return keyof(keyed, name);
-}
 function requiredOptionalCodec(required, optional, name) {
     return intersection([type(required, `${name}Req`), partial(optional, `${name}Opt`)], name);
 }
@@ -2424,6 +2417,32 @@ function extendCodec(parent, required, optional, name) {
         return intersection([parent, type(required, nameReq)], name);
     }
     return intersection([parent, type(required, nameReq), partial(optional, nameOpt)], name);
+}
+
+class EnumType extends Type {
+    constructor(name, is, validate, encode) {
+        super(name, is, validate, encode);
+        this._tag = 'EnumType';
+    }
+}
+function enumCodec(e, name, defaultValue) {
+    const keyed = {};
+    Object.values(e).forEach(v => {
+        keyed[v] = null;
+    });
+    const valueUnion = keyof(keyed);
+    return new EnumType(name, (u) => valueUnion.is(u), (u, c) => {
+        const validation = valueUnion.validate(u, c);
+        if (validation.isRight()) {
+            return validation;
+        }
+        else if (typeof defaultValue !== 'undefined' && typeof u === 'string') {
+            return success(defaultValue);
+        }
+        else {
+            return failure(u, c);
+        }
+    }, identity);
 }
 
 function stringify(v) {
@@ -2473,5 +2492,5 @@ function assertType(typeCodec, value, description = 'type') {
     return validation.value;
 }
 
-export { DateType, DateT, Logger, partialRecord, autoImplement, nullable, optional, enumCodec, requiredOptionalCodec, extendCodec, getMessage, SimpleReporter, assertType, stringify, capitalizeFirst, isObject, isEmptyObject, isUndefined, isNull, isNil, isString, isNumber, isArray, isType };
+export { DateType, DateT, Logger, partialRecord, autoImplement, nullable, optional, requiredOptionalCodec, extendCodec, EnumType, enumCodec, getMessage, SimpleReporter, assertType, stringify, capitalizeFirst, isObject, isEmptyObject, isUndefined, isNull, isNil, isString, isNumber, isArray, isType };
 //# sourceMappingURL=index.es.js.map

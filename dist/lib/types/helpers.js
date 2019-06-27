@@ -15,13 +15,6 @@ export function autoImplement() {
 }
 export const nullable = (codec) => t.union([codec, t.nullType], `${codec.name}Nullable`);
 export const optional = (codec) => t.union([codec, t.undefined], `${codec.name}Optional`);
-export function enumCodec(e, name) {
-    const keyed = {};
-    Object.values(e).forEach(v => {
-        keyed[v] = null;
-    });
-    return t.keyof(keyed, name);
-}
 export function requiredOptionalCodec(required, optional, name) {
     return t.intersection([t.type(required, `${name}Req`), t.partial(optional, `${name}Opt`)], name);
 }

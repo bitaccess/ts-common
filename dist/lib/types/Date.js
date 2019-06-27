@@ -22,4 +22,4 @@ export class DateType extends t.Type {
     }
 }
 export const DateT = new DateType();
-//# sourceMappingURL=DateT.js.map
+//# sourceMappingURL=Date.js.map
