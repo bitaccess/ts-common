@@ -1,4 +1,4 @@
-import { UnionType, IntersectionType, getFunctionName, Type, success, number, string, failure, identity, type, Function, partial, union, nullType, undefined as undefined$1, intersection, keyof } from 'io-ts';
+import { UnionType, IntersectionType, getFunctionName, Type, success, number, string, failure, identity, partial, union, nullType, undefined as undefined$1, intersection, type, Function, keyof } from 'io-ts';
 
 class DateType extends Type {
     constructor() {
@@ -2484,10 +2484,10 @@ function getMessage(e) {
 const SimpleReporter = {
     report: validation => validation.fold(es => es.map(getMessage), () => ['No errors!']),
 };
-function assertType(typeCodec, value, description = 'type') {
+function assertType(typeCodec, value, description = 'type', ErrorType = TypeError) {
     const validation = typeCodec.decode(value);
     if (validation.isLeft()) {
-        throw new TypeError(`Invalid ${description} - ${SimpleReporter.report(validation)[0]}`);
+        throw new ErrorType(`Invalid ${description} - ${SimpleReporter.report(validation)[0]}`);
     }
     return validation.value;
 }

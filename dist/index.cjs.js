@@ -2488,10 +2488,10 @@ function getMessage(e) {
 const SimpleReporter = {
     report: validation => validation.fold(es => es.map(getMessage), () => ['No errors!']),
 };
-function assertType(typeCodec, value, description = 'type') {
+function assertType(typeCodec, value, description = 'type', ErrorType = TypeError) {
     const validation = typeCodec.decode(value);
     if (validation.isLeft()) {
-        throw new TypeError(`Invalid ${description} - ${SimpleReporter.report(validation)[0]}`);
+        throw new ErrorType(`Invalid ${description} - ${SimpleReporter.report(validation)[0]}`);
     }
     return validation.value;
 }
