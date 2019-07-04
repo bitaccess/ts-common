@@ -32,10 +32,15 @@ export const SimpleReporter: Reporter<Array<string>> = {
  * @returns The decoded value
  * @throws TypeError when assertion fails
  */
-export function assertType<T>(typeCodec: Type<T>, value: unknown, description: string = 'type'): T {
+export function assertType<T>(
+  typeCodec: Type<T>,
+  value: unknown,
+  description: string = 'type',
+  ErrorType: { new (message: string): Error } = TypeError,
+): T {
   const validation = typeCodec.decode(value)
   if (validation.isLeft()) {
-    throw new TypeError(`Invalid ${description} - ${SimpleReporter.report(validation)[0]}`)
+    throw new ErrorType(`Invalid ${description} - ${SimpleReporter.report(validation)[0]}`)
   }
   return validation.value
 }

@@ -81,6 +81,12 @@ describe('utils', () => {
         })
         expect(() => assertType(customType, {})).toThrow()
       })
+      it('throws TypeError when error type not provided', () => {
+        expect(() => assertType(t.string, 5, '')).toThrow(TypeError)
+      })
+      it('throws correct error type when specified', () => {
+        expect(() => assertType(t.string, 5, '', SyntaxError)).toThrow(SyntaxError)
+      })
     })
   })
 })
