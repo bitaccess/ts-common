@@ -1,4 +1,4 @@
-import { UnionType, IntersectionType, getFunctionName, Type, success, number, string, failure, identity, partial, union, nullType, undefined as undefined$1, intersection, type, Function, keyof } from 'io-ts';
+import { getFunctionName, UnionType, IntersectionType, Type, success, number, string, failure, identity, type, Function, partial, union, nullType, undefined as undefined$1, intersection, keyof } from 'io-ts';
 
 class DateType extends Type {
     constructor() {
@@ -2445,6 +2445,16 @@ function enumCodec(e, name, defaultValue) {
     }, identity);
 }
 
+class FunctionType extends Type {
+    constructor(name = 'Function') {
+        super(name, (u) => typeof u === 'function', (u, c) => (this.is(u) ? success(u) : failure(u, c)), identity);
+        this._tag = 'FunctionType';
+    }
+}
+function functionT(name) {
+    return new FunctionType(name);
+}
+
 function stringify(v) {
     if (typeof v === 'undefined') {
         return 'undefined';
@@ -2492,5 +2502,5 @@ function assertType(typeCodec, value, description = 'type', ErrorType = TypeErro
     return validation.value;
 }
 
-export { DateType, DateT, Logger, partialRecord, autoImplement, nullable, optional, requiredOptionalCodec, extendCodec, EnumType, enumCodec, getMessage, SimpleReporter, assertType, stringify, capitalizeFirst, isObject, isEmptyObject, isUndefined, isNull, isNil, isString, isNumber, isArray, isType };
+export { DateType, DateT, Logger, partialRecord, autoImplement, nullable, optional, requiredOptionalCodec, extendCodec, EnumType, enumCodec, functionT, getMessage, SimpleReporter, assertType, stringify, capitalizeFirst, isObject, isEmptyObject, isUndefined, isNull, isNil, isString, isNumber, isArray, isType };
 //# sourceMappingURL=index.es.js.map

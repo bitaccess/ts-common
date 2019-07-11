@@ -2449,6 +2449,16 @@
       }, t.identity);
   }
 
+  class FunctionType extends t.Type {
+      constructor(name = 'Function') {
+          super(name, (u) => typeof u === 'function', (u, c) => (this.is(u) ? t.success(u) : t.failure(u, c)), t.identity);
+          this._tag = 'FunctionType';
+      }
+  }
+  function functionT(name) {
+      return new FunctionType(name);
+  }
+
   function stringify(v) {
       if (typeof v === 'undefined') {
           return 'undefined';
@@ -2507,6 +2517,7 @@
   exports.extendCodec = extendCodec;
   exports.EnumType = EnumType;
   exports.enumCodec = enumCodec;
+  exports.functionT = functionT;
   exports.getMessage = getMessage;
   exports.SimpleReporter = SimpleReporter;
   exports.assertType = assertType;
