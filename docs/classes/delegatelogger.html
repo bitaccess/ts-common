@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>@faast/ts-common | @faast/ts-common</title>
+	<title>DelegateLogger | @faast/ts-common</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">/*! normalize.css v1.1.3 | MIT License | git.io/normalize */
@@ -879,7 +879,7 @@ img { max-width: 100%; }
 		<div class="container">
 			<div class="table-wrap">
 				<div class="table-cell">
-					<strong><a href="index.html">@faast/ts-common</a></strong>
+					<strong><a href="../index.html">@faast/ts-common</a></strong>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -907,1254 +907,233 @@ img { max-width: 100%; }
 </header>
 <nav class="tsd-navigation secondary">
 	<ul>
-		<li class=" tsd-kind-class tsd-has-type-parameter">
-			<a href="classes/datetype.html" class="tsd-kind-icon">Date<wbr>Type</a>
-		</li>
-		<li class=" tsd-kind-class">
-			<a href="classes/delegatelogger.html" class="tsd-kind-icon">Delegate<wbr>Logger</a>
-		</li>
-		<li class=" tsd-kind-class tsd-has-type-parameter">
-			<a href="classes/enumtype.html" class="tsd-kind-icon">Enum<wbr>Type</a>
-		</li>
-		<li class=" tsd-kind-class tsd-has-type-parameter tsd-is-not-exported">
-			<a href="classes/functiontype.html" class="tsd-kind-icon">Function<wbr>Type</a>
-		</li>
-		<li class=" tsd-kind-class tsd-has-type-parameter tsd-is-not-exported">
-			<a href="classes/loggertype.html" class="tsd-kind-icon">Logger<wbr>Type</a>
-		</li>
-		<li class=" tsd-kind-interface tsd-has-type-parameter">
-			<a href="interfaces/datec.html" class="tsd-kind-icon">DateC</a>
-		</li>
-		<li class=" tsd-kind-interface tsd-has-type-parameter">
-			<a href="interfaces/enumc.html" class="tsd-kind-icon">EnumC</a>
-		</li>
-		<li class=" tsd-kind-interface tsd-has-type-parameter">
-			<a href="interfaces/functionc.html" class="tsd-kind-icon">FunctionC</a>
-		</li>
-		<li class=" tsd-kind-interface">
-			<a href="interfaces/logger.html" class="tsd-kind-icon">Logger</a>
-		</li>
-		<li class=" tsd-kind-interface tsd-has-type-parameter">
-			<a href="interfaces/loggerc.html" class="tsd-kind-icon">LoggerC</a>
-		</li>
-		<li class=" tsd-kind-type-alias tsd-has-type-parameter">
-			<a href="globals.html#deeppartial" class="tsd-kind-icon">Deep<wbr>Partial</a>
-		</li>
-		<li class=" tsd-kind-type-alias tsd-has-type-parameter">
-			<a href="globals.html#defined" class="tsd-kind-icon">Defined</a>
-		</li>
-		<li class=" tsd-kind-type-alias">
-			<a href="globals.html#enum" class="tsd-kind-icon">Enum</a>
-		</li>
-		<li class=" tsd-kind-type-alias">
-			<a href="globals.html#loggerfn" class="tsd-kind-icon">Logger<wbr>Fn</a>
-		</li>
-		<li class=" tsd-kind-type-alias tsd-has-type-parameter">
-			<a href="globals.html#omit" class="tsd-kind-icon">Omit</a>
-		</li>
-		<li class=" tsd-kind-type-alias tsd-has-type-parameter">
-			<a href="globals.html#predicate" class="tsd-kind-icon">Predicate</a>
-		</li>
-		<li class=" tsd-kind-variable">
-			<a href="globals.html#datet" class="tsd-kind-icon">DateT</a>
-		</li>
-		<li class=" tsd-kind-variable tsd-is-not-exported">
-			<a href="globals.html#loggercodec" class="tsd-kind-icon">Logger<wbr>Codec</a>
-		</li>
-		<li class=" tsd-kind-function tsd-has-type-parameter">
-			<a href="globals.html#asserttype" class="tsd-kind-icon">assert<wbr>Type</a>
-		</li>
-		<li class=" tsd-kind-function tsd-has-type-parameter">
-			<a href="globals.html#autoimplement" class="tsd-kind-icon">auto<wbr>Implement</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#capitalizefirst" class="tsd-kind-icon">capitalize<wbr>First</a>
-		</li>
-		<li class=" tsd-kind-function tsd-has-type-parameter">
-			<a href="globals.html#enumcodec" class="tsd-kind-icon">enum<wbr>Codec</a>
-		</li>
-		<li class=" tsd-kind-function tsd-has-type-parameter">
-			<a href="globals.html#extendcodec" class="tsd-kind-icon">extend<wbr>Codec</a>
-		</li>
-		<li class=" tsd-kind-function tsd-has-type-parameter">
-			<a href="globals.html#functiont" class="tsd-kind-icon">functionT</a>
-		</li>
-		<li class=" tsd-kind-function tsd-is-not-exported">
-			<a href="globals.html#getcontextpath" class="tsd-kind-icon">get<wbr>Context<wbr>Path</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#getmessage" class="tsd-kind-icon">get<wbr>Message</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#isarray" class="tsd-kind-icon">is<wbr>Array</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#isemptyobject" class="tsd-kind-icon">is<wbr>Empty<wbr>Object</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#isnil" class="tsd-kind-icon">is<wbr>Nil</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#isnull" class="tsd-kind-icon">is<wbr>Null</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#isnumber" class="tsd-kind-icon">is<wbr>Number</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#isobject" class="tsd-kind-icon">is<wbr>Object</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#isstring" class="tsd-kind-icon">is<wbr>String</a>
-		</li>
-		<li class=" tsd-kind-function tsd-has-type-parameter">
-			<a href="globals.html#istype" class="tsd-kind-icon">is<wbr>Type</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#isundefined" class="tsd-kind-icon">is<wbr>Undefined</a>
-		</li>
-		<li class=" tsd-kind-function tsd-has-type-parameter">
-			<a href="globals.html#nullable" class="tsd-kind-icon">nullable</a>
-		</li>
-		<li class=" tsd-kind-function tsd-has-type-parameter">
-			<a href="globals.html#optional" class="tsd-kind-icon">optional</a>
-		</li>
-		<li class=" tsd-kind-function tsd-has-type-parameter">
-			<a href="globals.html#partialrecord" class="tsd-kind-icon">partial<wbr>Record</a>
-		</li>
-		<li class=" tsd-kind-function tsd-has-type-parameter">
-			<a href="globals.html#requiredoptionalcodec" class="tsd-kind-icon">required<wbr>Optional<wbr>Codec</a>
-		</li>
-		<li class=" tsd-kind-function">
-			<a href="globals.html#stringify" class="tsd-kind-icon">stringify</a>
-		</li>
-		<li class=" tsd-kind-function tsd-is-not-exported">
-			<a href="globals.html#validationerror" class="tsd-kind-icon">validation<wbr>Error</a>
-		</li>
-		<li class=" tsd-kind-object-literal">
-			<a href="globals.html#simplereporter" class="tsd-kind-icon">Simple<wbr>Reporter</a>
+		<li class="current tsd-kind-class">
+			<a href="delegatelogger.html" class="tsd-kind-icon">Delegate<wbr>Logger</a>
+			<ul>
+				<li class=" tsd-kind-constructor tsd-parent-kind-class">
+					<a href="delegatelogger.html#constructor" class="tsd-kind-icon">constructor</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class">
+					<a href="delegatelogger.html#debug" class="tsd-kind-icon">debug</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class">
+					<a href="delegatelogger.html#error" class="tsd-kind-icon">error</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class">
+					<a href="delegatelogger.html#info" class="tsd-kind-icon">info</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class">
+					<a href="delegatelogger.html#log" class="tsd-kind-icon">log</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class">
+					<a href="delegatelogger.html#logger" class="tsd-kind-icon">logger</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a href="delegatelogger.html#prefix" class="tsd-kind-icon">prefix</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class">
+					<a href="delegatelogger.html#trace" class="tsd-kind-icon">trace</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class">
+					<a href="delegatelogger.html#warn" class="tsd-kind-icon">warn</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a href="delegatelogger.html#delegate" class="tsd-kind-icon">delegate</a>
+				</li>
+			</ul>
 		</li>
 	</ul>
 </nav>
 <div class="container container-main">
 	<div class="content-wrap">
+		<section class="tsd-panel tsd-hierarchy">
+			<h3>Hierarchy</h3>
+			<ul class="tsd-hierarchy">
+				<li>
+					<span class="target">DelegateLogger</span>
+				</li>
+			</ul>
+		</section>
+		<section class="tsd-panel">
+			<h3>Implements</h3>
+			<ul class="tsd-hierarchy">
+				<li><a href="../interfaces/logger.html" class="tsd-signature-type">Logger</a></li>
+			</ul>
+		</section>
 		<section class="tsd-panel-group tsd-index-group">
 			<h2>Index</h2>
 			<section class="tsd-panel tsd-index-panel">
 				<div class="tsd-index-content">
 					<section class="tsd-index-section ">
-						<h3>Classes</h3>
+						<h3>Constructors</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/datetype.html" class="tsd-kind-icon">Date<wbr>Type</a></li>
-							<li class="tsd-kind-class"><a href="classes/delegatelogger.html" class="tsd-kind-icon">Delegate<wbr>Logger</a></li>
-							<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/enumtype.html" class="tsd-kind-icon">Enum<wbr>Type</a></li>
-							<li class="tsd-kind-class tsd-has-type-parameter tsd-is-not-exported"><a href="classes/functiontype.html" class="tsd-kind-icon">Function<wbr>Type</a></li>
-							<li class="tsd-kind-class tsd-has-type-parameter tsd-is-not-exported"><a href="classes/loggertype.html" class="tsd-kind-icon">Logger<wbr>Type</a></li>
+							<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="delegatelogger.html#constructor" class="tsd-kind-icon">constructor</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
-						<h3>Interfaces</h3>
+						<h3>Properties</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/datec.html" class="tsd-kind-icon">DateC</a></li>
-							<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/enumc.html" class="tsd-kind-icon">EnumC</a></li>
-							<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/functionc.html" class="tsd-kind-icon">FunctionC</a></li>
-							<li class="tsd-kind-interface"><a href="interfaces/logger.html" class="tsd-kind-icon">Logger</a></li>
-							<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/loggerc.html" class="tsd-kind-icon">LoggerC</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class"><a href="delegatelogger.html#debug" class="tsd-kind-icon">debug</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class"><a href="delegatelogger.html#error" class="tsd-kind-icon">error</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class"><a href="delegatelogger.html#info" class="tsd-kind-icon">info</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class"><a href="delegatelogger.html#log" class="tsd-kind-icon">log</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class"><a href="delegatelogger.html#logger" class="tsd-kind-icon">logger</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="delegatelogger.html#prefix" class="tsd-kind-icon">prefix</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class"><a href="delegatelogger.html#trace" class="tsd-kind-icon">trace</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class"><a href="delegatelogger.html#warn" class="tsd-kind-icon">warn</a></li>
 						</ul>
 					</section>
-					<section class="tsd-index-section ">
-						<h3>Type aliases</h3>
+					<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
+						<h3>Methods</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#deeppartial" class="tsd-kind-icon">Deep<wbr>Partial</a></li>
-							<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#defined" class="tsd-kind-icon">Defined</a></li>
-							<li class="tsd-kind-type-alias"><a href="globals.html#enum" class="tsd-kind-icon">Enum</a></li>
-							<li class="tsd-kind-type-alias"><a href="globals.html#loggerfn" class="tsd-kind-icon">Logger<wbr>Fn</a></li>
-							<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#omit" class="tsd-kind-icon">Omit</a></li>
-							<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#predicate" class="tsd-kind-icon">Predicate</a></li>
-						</ul>
-					</section>
-					<section class="tsd-index-section ">
-						<h3>Variables</h3>
-						<ul class="tsd-index-list">
-							<li class="tsd-kind-variable"><a href="globals.html#datet" class="tsd-kind-icon">DateT</a></li>
-							<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#loggercodec" class="tsd-kind-icon">Logger<wbr>Codec</a></li>
-						</ul>
-					</section>
-					<section class="tsd-index-section ">
-						<h3>Functions</h3>
-						<ul class="tsd-index-list">
-							<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#asserttype" class="tsd-kind-icon">assert<wbr>Type</a></li>
-							<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#autoimplement" class="tsd-kind-icon">auto<wbr>Implement</a></li>
-							<li class="tsd-kind-function"><a href="globals.html#capitalizefirst" class="tsd-kind-icon">capitalize<wbr>First</a></li>
-							<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#enumcodec" class="tsd-kind-icon">enum<wbr>Codec</a></li>
-							<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#extendcodec" class="tsd-kind-icon">extend<wbr>Codec</a></li>
-							<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#functiont" class="tsd-kind-icon">functionT</a></li>
-							<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#getcontextpath" class="tsd-kind-icon">get<wbr>Context<wbr>Path</a></li>
-							<li class="tsd-kind-function"><a href="globals.html#getmessage" class="tsd-kind-icon">get<wbr>Message</a></li>
-							<li class="tsd-kind-function"><a href="globals.html#isarray" class="tsd-kind-icon">is<wbr>Array</a></li>
-							<li class="tsd-kind-function"><a href="globals.html#isemptyobject" class="tsd-kind-icon">is<wbr>Empty<wbr>Object</a></li>
-							<li class="tsd-kind-function"><a href="globals.html#isnil" class="tsd-kind-icon">is<wbr>Nil</a></li>
-							<li class="tsd-kind-function"><a href="globals.html#isnull" class="tsd-kind-icon">is<wbr>Null</a></li>
-							<li class="tsd-kind-function"><a href="globals.html#isnumber" class="tsd-kind-icon">is<wbr>Number</a></li>
-							<li class="tsd-kind-function"><a href="globals.html#isobject" class="tsd-kind-icon">is<wbr>Object</a></li>
-							<li class="tsd-kind-function"><a href="globals.html#isstring" class="tsd-kind-icon">is<wbr>String</a></li>
-							<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#istype" class="tsd-kind-icon">is<wbr>Type</a></li>
-							<li class="tsd-kind-function"><a href="globals.html#isundefined" class="tsd-kind-icon">is<wbr>Undefined</a></li>
-							<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#nullable" class="tsd-kind-icon">nullable</a></li>
-							<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#optional" class="tsd-kind-icon">optional</a></li>
-							<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#partialrecord" class="tsd-kind-icon">partial<wbr>Record</a></li>
-							<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#requiredoptionalcodec" class="tsd-kind-icon">required<wbr>Optional<wbr>Codec</a></li>
-							<li class="tsd-kind-function"><a href="globals.html#stringify" class="tsd-kind-icon">stringify</a></li>
-							<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#validationerror" class="tsd-kind-icon">validation<wbr>Error</a></li>
-						</ul>
-					</section>
-					<section class="tsd-index-section ">
-						<h3>Object literals</h3>
-						<ul class="tsd-index-list">
-							<li class="tsd-kind-object-literal"><a href="globals.html#simplereporter" class="tsd-kind-icon">Simple<wbr>Reporter</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="delegatelogger.html#delegate" class="tsd-kind-icon">delegate</a></li>
 						</ul>
 					</section>
 				</div>
 			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
-			<h2>Type aliases</h2>
-			<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
-				<a name="deeppartial" class="tsd-anchor"></a>
-				<h3>Deep<wbr>Partial</h3>
-				<div class="tsd-signature tsd-kind-icon">Deep<wbr>Partial<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/types/basic.ts#L5">src/types/basic.ts:5</a></li>
-					</ul>
-				</aside>
-				<div class="tsd-type-declaration">
-					<h4>Type declaration</h4>
-					<ul class="tsd-parameters">
-					</ul>
-				</div>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
-				<a name="defined" class="tsd-anchor"></a>
-				<h3>Defined</h3>
-				<div class="tsd-signature tsd-kind-icon">Defined<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Defined&lt;T&gt;</span></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/types/basic.ts#L3">src/types/basic.ts:3</a></li>
-					</ul>
-				</aside>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-type-alias">
-				<a name="enum" class="tsd-anchor"></a>
-				<h3>Enum</h3>
-				<div class="tsd-signature tsd-kind-icon">Enum<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Object</span></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/types/basic.ts#L13">src/types/basic.ts:13</a></li>
-					</ul>
-				</aside>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-type-alias">
-				<a name="loggerfn" class="tsd-anchor"></a>
-				<h3>Logger<wbr>Fn</h3>
-				<div class="tsd-signature tsd-kind-icon">Logger<wbr>Fn<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/types/Logger.ts#L7">src/types/Logger.ts:7</a></li>
-					</ul>
-				</aside>
-				<div class="tsd-type-declaration">
-					<h4>Type declaration</h4>
-					<ul class="tsd-parameters">
-						<li class="tsd-parameter-siganture">
-							<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-is-not-exported">
-								<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-							</ul>
-							<ul class="tsd-descriptions">
-								<li class="tsd-description">
-									<h4 class="tsd-parameters-title">Parameters</h4>
-									<ul class="tsd-parameters">
-										<li>
-											<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
-										</li>
-									</ul>
-									<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
-				<a name="omit" class="tsd-anchor"></a>
-				<h3>Omit</h3>
-				<div class="tsd-signature tsd-kind-icon">Omit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Exclude</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">keyof T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/types/basic.ts#L15">src/types/basic.ts:15</a></li>
-					</ul>
-				</aside>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
-				<a name="predicate" class="tsd-anchor"></a>
-				<h3>Predicate</h3>
-				<div class="tsd-signature tsd-kind-icon">Predicate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/types/basic.ts#L1">src/types/basic.ts:1</a></li>
-					</ul>
-				</aside>
-				<div class="tsd-type-declaration">
-					<h4>Type declaration</h4>
-					<ul class="tsd-parameters">
-						<li class="tsd-parameter-siganture">
-							<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-is-not-exported">
-								<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-							</ul>
-							<ul class="tsd-descriptions">
-								<li class="tsd-description">
-									<h4 class="tsd-parameters-title">Parameters</h4>
-									<ul class="tsd-parameters">
-										<li>
-											<h5>x: <span class="tsd-signature-type">T</span></h5>
-										</li>
-									</ul>
-									<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</section>
-		</section>
-		<section class="tsd-panel-group tsd-member-group ">
-			<h2>Variables</h2>
-			<section class="tsd-panel tsd-member tsd-kind-variable">
-				<a name="datet" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagConst">Const</span> DateT</h3>
-				<div class="tsd-signature tsd-kind-icon">DateT<span class="tsd-signature-symbol">:</span> <a href="interfaces/datec.html" class="tsd-signature-type">DateC</a><span class="tsd-signature-symbol"> =&nbsp;new DateType()</span></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/types/Date.ts#L29">src/types/Date.ts:29</a></li>
-					</ul>
-				</aside>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
-				<a name="loggercodec" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagConst">Const</span> Logger<wbr>Codec</h3>
-				<div class="tsd-signature tsd-kind-icon">Logger<wbr>Codec<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">TypeC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;t.type({error: t.Function,warn: t.Function,info: t.Function,log: t.Function,debug: t.Function,trace: t.Function,},&#x27;Logger&#x27;,)</span></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/types/Logger.ts#L18">src/types/Logger.ts:18</a></li>
-					</ul>
-				</aside>
-			</section>
-		</section>
-		<section class="tsd-panel-group tsd-member-group ">
-			<h2>Functions</h2>
-			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
-				<a name="asserttype" class="tsd-anchor"></a>
-				<h3>assert<wbr>Type</h3>
-				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">assert<wbr>Type&lt;T&gt;<span class="tsd-signature-symbol">(</span>typeCodec<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span>, description<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, ErrorType<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
+			<h2>Constructors</h2>
+			<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+				<a name="constructor" class="tsd-anchor"></a>
+				<h3>constructor</h3>
+				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">new <wbr>Delegate<wbr>Logger<span class="tsd-signature-symbol">(</span>logger<span class="tsd-signature-symbol">?: </span><a href="../interfaces/logger.html" class="tsd-signature-type">Logger</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span>, prefix<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="delegatelogger.html" class="tsd-signature-type">DelegateLogger</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/utils/validation.ts#L35">src/utils/validation.ts:35</a></li>
-							</ul>
-						</aside>
-						<div class="tsd-comment tsd-typography">
-							<div class="lead">
-								<p>Throws a type error if <code>value</code> isn&#39;t conformant to type <code>T</code>.</p>
-							</div>
-							<dl class="tsd-comment-tags">
-								<dt>throws</dt>
-								<dd><p>TypeError when assertion fails</p>
-								</dd>
-							</dl>
-						</div>
-						<h4 class="tsd-type-parameters-title">Type parameters</h4>
-						<ul class="tsd-type-parameters">
-							<li>
-								<h4>T</h4>
-							</li>
-						</ul>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>typeCodec: <span class="tsd-signature-type">Type</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<p>An io-ts type codec for T</p>
-								</div>
-							</li>
-							<li>
-								<h5>value: <span class="tsd-signature-type">unknown</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<p>The value to check</p>
-								</div>
-							</li>
-							<li>
-								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> description: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;type&quot;</span></h5>
-							</li>
-							<li>
-								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> ErrorType: <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> =&nbsp;TypeError</span></h5>
-								<ul class="tsd-parameters">
-									<li class="tsd-parameter">
-										<h5>constructor<span class="tsd-signature-symbol">: </span>function</h5>
-										<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-type-literal tsd-is-not-exported">
-											<li class="tsd-signature tsd-kind-icon">new __type<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span></li>
-										</ul>
-										<ul class="tsd-descriptions">
-											<li class="tsd-description">
-												<aside class="tsd-sources">
-													<ul>
-														<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/utils/validation.ts#L39">src/utils/validation.ts:39</a></li>
-													</ul>
-												</aside>
-												<h4 class="tsd-parameters-title">Parameters</h4>
-												<ul class="tsd-parameters">
-													<li>
-														<h5>message: <span class="tsd-signature-type">string</span></h5>
-													</li>
-												</ul>
-												<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Error</span></h4>
-											</li>
-									</ul>        </li>
-								</ul>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
-						<p>The decoded value</p>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
-				<a name="autoimplement" class="tsd-anchor"></a>
-				<h3>auto<wbr>Implement</h3>
-				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">auto<wbr>Implement&lt;T&gt;<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/types/helpers.ts#L13">src/types/helpers.ts:13</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-type-parameters-title">Type parameters</h4>
-						<ul class="tsd-type-parameters">
-							<li>
-								<h4>T<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h4>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
-						<ul class="tsd-parameters">
-						</ul>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function">
-				<a name="capitalizefirst" class="tsd-anchor"></a>
-				<h3>capitalize<wbr>First</h3>
-				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">capitalize<wbr>First<span class="tsd-signature-symbol">(</span>s<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/utils/string.ts#L19">src/utils/string.ts:19</a></li>
+								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/DelegateLogger.ts#L4">src/DelegateLogger.ts:4</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>s: <span class="tsd-signature-type">string</span></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> logger: <a href="../interfaces/logger.html" class="tsd-signature-type">Logger</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> prefix: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
-				<a name="enumcodec" class="tsd-anchor"></a>
-				<h3>enum<wbr>Codec</h3>
-				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">enum<wbr>Codec&lt;E&gt;<span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, defaultValue<span class="tsd-signature-symbol">?: </span><a href="" class="tsd-signature-type">E</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">E</span><span class="tsd-signature-symbol">&gt;</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/types/Enum.ts#L15">src/types/Enum.ts:15</a></li>
-							</ul>
-						</aside>
-						<div class="tsd-comment tsd-typography">
-							<div class="lead">
-								<p>Creates an io-ts runtime type based off a typescript enum <code>e</code></p>
-							</div>
-						</div>
-						<h4 class="tsd-type-parameters-title">Type parameters</h4>
-						<ul class="tsd-type-parameters">
-							<li>
-								<h4>E<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h4>
-							</li>
-						</ul>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>e: <span class="tsd-signature-type">Object</span></h5>
-							</li>
-							<li>
-								<h5>name: <span class="tsd-signature-type">string</span></h5>
-							</li>
-							<li>
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> defaultValue: <a href="" class="tsd-signature-type">E</a></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Type</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">E</span><span class="tsd-signature-symbol">&gt;</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
-				<a name="extendcodec" class="tsd-anchor"></a>
-				<h3>extend<wbr>Codec</h3>
-				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">extend<wbr>Codec&lt;P&gt;<span class="tsd-signature-symbol">(</span>parent<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">P</span>, required<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">__type</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">P</span></li>
-					<li class="tsd-signature tsd-kind-icon">extend<wbr>Codec&lt;P, R&gt;<span class="tsd-signature-symbol">(</span>parent<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">P</span>, required<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IntersectionC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TypeC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></li>
-					<li class="tsd-signature tsd-kind-icon">extend<wbr>Codec&lt;P&gt;<span class="tsd-signature-symbol">(</span>parent<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">P</span>, required<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">__type</span>, optional<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">__type</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">P</span></li>
-					<li class="tsd-signature tsd-kind-icon">extend<wbr>Codec&lt;P, O&gt;<span class="tsd-signature-symbol">(</span>parent<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">P</span>, required<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">__type</span>, optional<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">O</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IntersectionC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">PartialC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">O</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></li>
-					<li class="tsd-signature tsd-kind-icon">extend<wbr>Codec&lt;P, R&gt;<span class="tsd-signature-symbol">(</span>parent<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">P</span>, required<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span>, optional<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">__type</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IntersectionC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TypeC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></li>
-					<li class="tsd-signature tsd-kind-icon">extend<wbr>Codec&lt;P, R, O&gt;<span class="tsd-signature-symbol">(</span>parent<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">P</span>, required<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span>, optional<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">O</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IntersectionC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TypeC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">PartialC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">O</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/types/helpers.ts#L46">src/types/helpers.ts:46</a></li>
-							</ul>
-						</aside>
-						<div class="tsd-comment tsd-typography">
-							<div class="lead">
-								<p>Extends a codec with additional required and optional attributes</p>
-							</div>
-						</div>
-						<h4 class="tsd-type-parameters-title">Type parameters</h4>
-						<ul class="tsd-type-parameters">
-							<li>
-								<h4>P<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Mixed</span></h4>
-							</li>
-						</ul>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>parent: <span class="tsd-signature-type">P</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<p>The type to extend</p>
-								</div>
-							</li>
-							<li>
-								<h5>required: <span class="tsd-signature-type">__type</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<p>The required props to add</p>
-								</div>
-							</li>
-							<li>
-								<h5>name: <span class="tsd-signature-type">string</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<p>The name of the type</p>
-								</div>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">P</span></h4>
-					</li>
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/types/helpers.ts#L47">src/types/helpers.ts:47</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-type-parameters-title">Type parameters</h4>
-						<ul class="tsd-type-parameters">
-							<li>
-								<h4>P<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Mixed</span></h4>
-							</li>
-							<li>
-								<h4>R<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Props</span></h4>
-							</li>
-						</ul>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>parent: <span class="tsd-signature-type">P</span></h5>
-							</li>
-							<li>
-								<h5>required: <span class="tsd-signature-type">R</span></h5>
-							</li>
-							<li>
-								<h5>name: <span class="tsd-signature-type">string</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IntersectionC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TypeC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></h4>
-					</li>
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/types/helpers.ts#L52">src/types/helpers.ts:52</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-type-parameters-title">Type parameters</h4>
-						<ul class="tsd-type-parameters">
-							<li>
-								<h4>P<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Mixed</span></h4>
-							</li>
-						</ul>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>parent: <span class="tsd-signature-type">P</span></h5>
-							</li>
-							<li>
-								<h5>required: <span class="tsd-signature-type">__type</span></h5>
-							</li>
-							<li>
-								<h5>optional: <span class="tsd-signature-type">__type</span></h5>
-							</li>
-							<li>
-								<h5>name: <span class="tsd-signature-type">string</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">P</span></h4>
-					</li>
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/types/helpers.ts#L53">src/types/helpers.ts:53</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-type-parameters-title">Type parameters</h4>
-						<ul class="tsd-type-parameters">
-							<li>
-								<h4>P<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Mixed</span></h4>
-							</li>
-							<li>
-								<h4>O<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Props</span></h4>
-							</li>
-						</ul>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>parent: <span class="tsd-signature-type">P</span></h5>
-							</li>
-							<li>
-								<h5>required: <span class="tsd-signature-type">__type</span></h5>
-							</li>
-							<li>
-								<h5>optional: <span class="tsd-signature-type">O</span></h5>
-							</li>
-							<li>
-								<h5>name: <span class="tsd-signature-type">string</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IntersectionC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">PartialC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">O</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></h4>
-					</li>
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/types/helpers.ts#L59">src/types/helpers.ts:59</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-type-parameters-title">Type parameters</h4>
-						<ul class="tsd-type-parameters">
-							<li>
-								<h4>P<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Mixed</span></h4>
-							</li>
-							<li>
-								<h4>R<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Props</span></h4>
-							</li>
-						</ul>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>parent: <span class="tsd-signature-type">P</span></h5>
-							</li>
-							<li>
-								<h5>required: <span class="tsd-signature-type">R</span></h5>
-							</li>
-							<li>
-								<h5>optional: <span class="tsd-signature-type">__type</span></h5>
-							</li>
-							<li>
-								<h5>name: <span class="tsd-signature-type">string</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IntersectionC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TypeC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></h4>
-					</li>
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/types/helpers.ts#L65">src/types/helpers.ts:65</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-type-parameters-title">Type parameters</h4>
-						<ul class="tsd-type-parameters">
-							<li>
-								<h4>P<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Mixed</span></h4>
-							</li>
-							<li>
-								<h4>R<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Props</span></h4>
-							</li>
-							<li>
-								<h4>O<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Props</span></h4>
-							</li>
-						</ul>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>parent: <span class="tsd-signature-type">P</span></h5>
-							</li>
-							<li>
-								<h5>required: <span class="tsd-signature-type">R</span></h5>
-							</li>
-							<li>
-								<h5>optional: <span class="tsd-signature-type">O</span></h5>
-							</li>
-							<li>
-								<h5>name: <span class="tsd-signature-type">string</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IntersectionC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TypeC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">PartialC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">O</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
-				<a name="functiont" class="tsd-anchor"></a>
-				<h3>functionT</h3>
-				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">functionT&lt;Fn&gt;<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/functionc.html" class="tsd-signature-type">FunctionC</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Fn</span><span class="tsd-signature-symbol">&gt;</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/types/FunctionT.ts#L19">src/types/FunctionT.ts:19</a></li>
-							</ul>
-						</aside>
-						<div class="tsd-comment tsd-typography">
-							<div class="lead">
-								<p>An io-ts codec representing a Function. Only tests for typeof function but allows generic to specify
-								a more specific static type with a signature and return type.</p>
-							</div>
-						</div>
-						<h4 class="tsd-type-parameters-title">Type parameters</h4>
-						<ul class="tsd-type-parameters">
-							<li>
-								<h4>Fn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span></h4>
-							</li>
-						</ul>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> name: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <a href="interfaces/functionc.html" class="tsd-signature-type">FunctionC</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Fn</span><span class="tsd-signature-symbol">&gt;</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function tsd-is-not-exported">
-				<a name="getcontextpath" class="tsd-anchor"></a>
-				<h3>get<wbr>Context<wbr>Path</h3>
-				<ul class="tsd-signatures tsd-kind-function tsd-is-not-exported">
-					<li class="tsd-signature tsd-kind-icon">get<wbr>Context<wbr>Path<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Context</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/utils/validation.ts#L5">src/utils/validation.ts:5</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>context: <span class="tsd-signature-type">Context</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function">
-				<a name="getmessage" class="tsd-anchor"></a>
-				<h3>get<wbr>Message</h3>
-				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">get<wbr>Message<span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ValidationError</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/utils/validation.ts#L16">src/utils/validation.ts:16</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>e: <span class="tsd-signature-type">ValidationError</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function">
-				<a name="isarray" class="tsd-anchor"></a>
-				<h3>is<wbr>Array</h3>
-				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">is<wbr>Array<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/guards/basic.ts#L29">src/guards/basic.ts:29</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>x: <span class="tsd-signature-type">unknown</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function">
-				<a name="isemptyobject" class="tsd-anchor"></a>
-				<h3>is<wbr>Empty<wbr>Object</h3>
-				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">is<wbr>Empty<wbr>Object<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/guards/basic.ts#L5">src/guards/basic.ts:5</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>x: <span class="tsd-signature-type">unknown</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function">
-				<a name="isnil" class="tsd-anchor"></a>
-				<h3>is<wbr>Nil</h3>
-				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">is<wbr>Nil<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/guards/basic.ts#L17">src/guards/basic.ts:17</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>x: <span class="tsd-signature-type">unknown</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function">
-				<a name="isnull" class="tsd-anchor"></a>
-				<h3>is<wbr>Null</h3>
-				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">is<wbr>Null<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/guards/basic.ts#L13">src/guards/basic.ts:13</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>x: <span class="tsd-signature-type">unknown</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function">
-				<a name="isnumber" class="tsd-anchor"></a>
-				<h3>is<wbr>Number</h3>
-				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">is<wbr>Number<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/guards/basic.ts#L25">src/guards/basic.ts:25</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>x: <span class="tsd-signature-type">unknown</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function">
-				<a name="isobject" class="tsd-anchor"></a>
-				<h3>is<wbr>Object</h3>
-				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">is<wbr>Object<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/guards/basic.ts#L1">src/guards/basic.ts:1</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>x: <span class="tsd-signature-type">unknown</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function">
-				<a name="isstring" class="tsd-anchor"></a>
-				<h3>is<wbr>String</h3>
-				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">is<wbr>String<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/guards/basic.ts#L21">src/guards/basic.ts:21</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>x: <span class="tsd-signature-type">unknown</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
-				<a name="istype" class="tsd-anchor"></a>
-				<h3>is<wbr>Type</h3>
-				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">is<wbr>Type&lt;T&gt;<span class="tsd-signature-symbol">(</span>codec<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/guards/codec.ts#L3">src/guards/codec.ts:3</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-type-parameters-title">Type parameters</h4>
-						<ul class="tsd-type-parameters">
-							<li>
-								<h4>T<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Mixed</span></h4>
-							</li>
-						</ul>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>codec: <span class="tsd-signature-type">T</span></h5>
-							</li>
-							<li>
-								<h5>x: <span class="tsd-signature-type">unknown</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function">
-				<a name="isundefined" class="tsd-anchor"></a>
-				<h3>is<wbr>Undefined</h3>
-				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">is<wbr>Undefined<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/guards/basic.ts#L9">src/guards/basic.ts:9</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>x: <span class="tsd-signature-type">unknown</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
-				<a name="nullable" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagConst">Const</span> nullable</h3>
-				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">nullable&lt;T&gt;<span class="tsd-signature-symbol">(</span>codec<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">UnionC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">NullC</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/types/helpers.ts#L23">src/types/helpers.ts:23</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-type-parameters-title">Type parameters</h4>
-						<ul class="tsd-type-parameters">
-							<li>
-								<h4>T<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Mixed</span></h4>
-							</li>
-						</ul>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>codec: <span class="tsd-signature-type">T</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">UnionC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">NullC</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
-				<a name="optional" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagConst">Const</span> optional</h3>
-				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">optional&lt;T&gt;<span class="tsd-signature-symbol">(</span>codec<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">UnionC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">UndefinedC</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/types/helpers.ts#L24">src/types/helpers.ts:24</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-type-parameters-title">Type parameters</h4>
-						<ul class="tsd-type-parameters">
-							<li>
-								<h4>T<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Mixed</span></h4>
-							</li>
-						</ul>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>codec: <span class="tsd-signature-type">T</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">UnionC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">UndefinedC</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
-				<a name="partialrecord" class="tsd-anchor"></a>
-				<h3>partial<wbr>Record</h3>
-				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">partial<wbr>Record&lt;KS, T&gt;<span class="tsd-signature-symbol">(</span>k<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">KS</span>, type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, name<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PartialC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">keyof KS[&quot;keys&quot;]</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/types/helpers.ts#L5">src/types/helpers.ts:5</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-type-parameters-title">Type parameters</h4>
-						<ul class="tsd-type-parameters">
-							<li>
-								<h4>KS<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">KeyofType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							</li>
-							<li>
-								<h4>T<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Any</span></h4>
-							</li>
-						</ul>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>k: <span class="tsd-signature-type">KS</span></h5>
-							</li>
-							<li>
-								<h5>type: <span class="tsd-signature-type">T</span></h5>
-							</li>
-							<li>
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> name: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">PartialC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">keyof KS[&quot;keys&quot;]</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
-				<a name="requiredoptionalcodec" class="tsd-anchor"></a>
-				<h3>required<wbr>Optional<wbr>Codec</h3>
-				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">required<wbr>Optional<wbr>Codec&lt;A, B&gt;<span class="tsd-signature-symbol">(</span>required<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">A</span>, optional<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">B</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IntersectionC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">TypeC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">A</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">PartialC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">B</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/types/helpers.ts#L34">src/types/helpers.ts:34</a></li>
-							</ul>
-						</aside>
-						<div class="tsd-comment tsd-typography">
-							<div class="lead">
-								<p>Creates a codec for an object with required and optional params using an intersection
-								codec.</p>
-							</div>
-						</div>
-						<h4 class="tsd-type-parameters-title">Type parameters</h4>
-						<ul class="tsd-type-parameters">
-							<li>
-								<h4>A<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Props</span></h4>
-							</li>
-							<li>
-								<h4>B<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Props</span></h4>
-							</li>
-						</ul>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>required: <span class="tsd-signature-type">A</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<p>The required attributes</p>
-								</div>
-							</li>
-							<li>
-								<h5>optional: <span class="tsd-signature-type">B</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<p>The optional attributes</p>
-								</div>
-							</li>
-							<li>
-								<h5>name: <span class="tsd-signature-type">string</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<p>The name of the type</p>
-								</div>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IntersectionC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">TypeC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">A</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">PartialC</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">B</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function">
-				<a name="stringify" class="tsd-anchor"></a>
-				<h3>stringify</h3>
-				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">stringify<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/utils/string.ts#L3">src/utils/string.ts:3</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>v: <span class="tsd-signature-type">any</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function tsd-is-not-exported">
-				<a name="validationerror" class="tsd-anchor"></a>
-				<h3>validation<wbr>Error</h3>
-				<ul class="tsd-signatures tsd-kind-function tsd-is-not-exported">
-					<li class="tsd-signature tsd-kind-icon">validation<wbr>Error<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ValidationError</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/test/utils.test.ts#L94">test/utils.test.ts:94</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> message: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ValidationError</span></h4>
+						<h4 class="tsd-returns-title">Returns <a href="delegatelogger.html" class="tsd-signature-type">DelegateLogger</a></h4>
 					</li>
 				</ul>
 			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
-			<h2>Object literals</h2>
-			<section class="tsd-panel tsd-member tsd-kind-object-literal">
-				<a name="simplereporter" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagConst">Const</span> Simple<wbr>Reporter</h3>
-				<div class="tsd-signature tsd-kind-icon">Simple<wbr>Reporter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+			<h2>Properties</h2>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+				<a name="debug" class="tsd-anchor"></a>
+				<h3>debug</h3>
+				<div class="tsd-signature tsd-kind-icon">debug<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">(Anonymous function)</span><span class="tsd-signature-symbol"> =&nbsp;this.delegate(&#x27;debug&#x27;)</span></div>
 				<aside class="tsd-sources">
+					<p>Implementation of <a href="../interfaces/logger.html">Logger</a>.<a href="../interfaces/logger.html#debug">debug</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/utils/validation.ts#L23">src/utils/validation.ts:23</a></li>
+						<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/DelegateLogger.ts#L29">src/DelegateLogger.ts:29</a></li>
 					</ul>
 				</aside>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-object-literal">
-					<a name="simplereporter.report" class="tsd-anchor"></a>
-					<h3>report</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-object-literal">
-						<li class="tsd-signature tsd-kind-icon">report<span class="tsd-signature-symbol">(</span>validation<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Left</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Errors</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Right</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Errors</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+				<a name="error" class="tsd-anchor"></a>
+				<h3>error</h3>
+				<div class="tsd-signature tsd-kind-icon">error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">(Anonymous function)</span><span class="tsd-signature-symbol"> =&nbsp;this.delegate(&#x27;error&#x27;)</span></div>
+				<aside class="tsd-sources">
+					<p>Implementation of <a href="../interfaces/logger.html">Logger</a>.<a href="../interfaces/logger.html#error">error</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/DelegateLogger.ts#L25">src/DelegateLogger.ts:25</a></li>
 					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/utils/validation.ts#L24">src/utils/validation.ts:24</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>validation: <span class="tsd-signature-type">Left</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Errors</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Right</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Errors</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+				<a name="info" class="tsd-anchor"></a>
+				<h3>info</h3>
+				<div class="tsd-signature tsd-kind-icon">info<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">(Anonymous function)</span><span class="tsd-signature-symbol"> =&nbsp;this.delegate(&#x27;info&#x27;)</span></div>
+				<aside class="tsd-sources">
+					<p>Implementation of <a href="../interfaces/logger.html">Logger</a>.<a href="../interfaces/logger.html#info">info</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/DelegateLogger.ts#L27">src/DelegateLogger.ts:27</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+				<a name="log" class="tsd-anchor"></a>
+				<h3>log</h3>
+				<div class="tsd-signature tsd-kind-icon">log<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">(Anonymous function)</span><span class="tsd-signature-symbol"> =&nbsp;this.delegate(&#x27;log&#x27;)</span></div>
+				<aside class="tsd-sources">
+					<p>Implementation of <a href="../interfaces/logger.html">Logger</a>.<a href="../interfaces/logger.html#log">log</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/DelegateLogger.ts#L28">src/DelegateLogger.ts:28</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+				<a name="logger" class="tsd-anchor"></a>
+				<h3>logger</h3>
+				<div class="tsd-signature tsd-kind-icon">logger<span class="tsd-signature-symbol">:</span> <a href="../interfaces/logger.html" class="tsd-signature-type">Logger</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/DelegateLogger.ts#L4">src/DelegateLogger.ts:4</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+				<a name="prefix" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagOptional">Optional</span> prefix</h3>
+				<div class="tsd-signature tsd-kind-icon">prefix<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/DelegateLogger.ts#L6">src/DelegateLogger.ts:6</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+				<a name="trace" class="tsd-anchor"></a>
+				<h3>trace</h3>
+				<div class="tsd-signature tsd-kind-icon">trace<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">(Anonymous function)</span><span class="tsd-signature-symbol"> =&nbsp;this.delegate(&#x27;trace&#x27;)</span></div>
+				<aside class="tsd-sources">
+					<p>Implementation of <a href="../interfaces/logger.html">Logger</a>.<a href="../interfaces/logger.html#trace">trace</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/DelegateLogger.ts#L30">src/DelegateLogger.ts:30</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+				<a name="warn" class="tsd-anchor"></a>
+				<h3>warn</h3>
+				<div class="tsd-signature tsd-kind-icon">warn<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">(Anonymous function)</span><span class="tsd-signature-symbol"> =&nbsp;this.delegate(&#x27;warn&#x27;)</span></div>
+				<aside class="tsd-sources">
+					<p>Implementation of <a href="../interfaces/logger.html">Logger</a>.<a href="../interfaces/logger.html#warn">warn</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/DelegateLogger.ts#L26">src/DelegateLogger.ts:26</a></li>
+					</ul>
+				</aside>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
+			<h2>Methods</h2>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+				<a name="delegate" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> delegate</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<li class="tsd-signature tsd-kind-icon">delegate<span class="tsd-signature-symbol">(</span>method<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">keyof Logger</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">(Anonymous function)</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/go-faast/faast-ts-common/blob/dca5163/src/DelegateLogger.ts#L13">src/DelegateLogger.ts:13</a></li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
-						</li>
-					</ul>
-				</section>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>method: <span class="tsd-signature-type">keyof Logger</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">(Anonymous function)</span></h4>
+					</li>
+				</ul>
 			</section>
 		</section>
 		<footer class="with-border-bottom">

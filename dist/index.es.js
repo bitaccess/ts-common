@@ -1,4 +1,4 @@
-import { getFunctionName, UnionType, IntersectionType, Type, success, number, string, failure, identity, type, Function, partial, union, nullType, undefined as undefined$1, intersection, keyof } from 'io-ts';
+import { UnionType, IntersectionType, getFunctionName, Type, success, number, string, failure, identity, type, Function, partial, union, nullType, undefined as undefined$1, intersection, keyof } from 'io-ts';
 
 class DateType extends Type {
     constructor() {
@@ -2502,5 +2502,33 @@ function assertType(typeCodec, value, description = 'type', ErrorType = TypeErro
     return validation.value;
 }
 
-export { DateType, DateT, Logger, partialRecord, autoImplement, nullable, optional, requiredOptionalCodec, extendCodec, EnumType, enumCodec, functionT, getMessage, SimpleReporter, assertType, stringify, capitalizeFirst, isObject, isEmptyObject, isUndefined, isNull, isNil, isString, isNumber, isArray, isType };
+class DelegateLogger {
+    constructor(logger, prefix) {
+        this.prefix = prefix;
+        this.error = this.delegate('error');
+        this.warn = this.delegate('warn');
+        this.info = this.delegate('info');
+        this.log = this.delegate('log');
+        this.debug = this.delegate('debug');
+        this.trace = this.delegate('trace');
+        this.logger = typeof logger === 'undefined' ? console : logger;
+        if (prefix) {
+            this.prefix = `[${prefix}]`;
+        }
+    }
+    delegate(method) {
+        return (...args) => {
+            if (this.logger !== null) {
+                if (this.prefix) {
+                    this.logger[method](this.prefix, ...args);
+                }
+                else {
+                    this.logger[method](...args);
+                }
+            }
+        };
+    }
+}
+
+export { DateType, DateT, Logger, partialRecord, autoImplement, nullable, optional, requiredOptionalCodec, extendCodec, EnumType, enumCodec, functionT, getMessage, SimpleReporter, assertType, stringify, capitalizeFirst, isObject, isEmptyObject, isUndefined, isNull, isNil, isString, isNumber, isArray, isType, DelegateLogger };
 //# sourceMappingURL=index.es.js.map
