@@ -1,4 +1,4 @@
-import { UnionType, IntersectionType, getFunctionName, Type, success, number, string, failure, identity, type, Function, partial, union, nullType, undefined as undefined$1, intersection, keyof } from 'io-ts';
+import { UnionType, IntersectionType, getFunctionName, Type, success, number, string, failure, identity, partial, union, nullType, undefined as undefined$1, intersection, type, Function, keyof } from 'io-ts';
 
 class DateType extends Type {
     constructor() {
@@ -2381,6 +2381,9 @@ function isType(codec, x) {
     return codec.is(x);
 }
 
+function instanceofCodec(con) {
+    return new Type(`instanceof(${con.name})`, (u) => u instanceof con, (u, c) => (u instanceof con ? success(u) : failure(u, c)), identity);
+}
 function partialRecord(k, type$$1, name) {
     return partial(Record_18(k.keys, () => type$$1), name);
 }
@@ -2530,5 +2533,5 @@ class DelegateLogger {
     }
 }
 
-export { DateType, DateT, Logger, partialRecord, autoImplement, nullable, optional, requiredOptionalCodec, extendCodec, EnumType, enumCodec, functionT, getMessage, SimpleReporter, assertType, stringify, capitalizeFirst, isObject, isEmptyObject, isUndefined, isNull, isNil, isString, isNumber, isArray, isType, DelegateLogger };
+export { DateType, DateT, Logger, instanceofCodec, partialRecord, autoImplement, nullable, optional, requiredOptionalCodec, extendCodec, EnumType, enumCodec, functionT, getMessage, SimpleReporter, assertType, stringify, capitalizeFirst, isObject, isEmptyObject, isUndefined, isNull, isNil, isString, isNumber, isArray, isType, DelegateLogger };
 //# sourceMappingURL=index.es.js.map

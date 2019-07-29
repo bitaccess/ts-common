@@ -2385,6 +2385,9 @@
       return codec.is(x);
   }
 
+  function instanceofCodec(con) {
+      return new t.Type(`instanceof(${con.name})`, (u) => u instanceof con, (u, c) => (u instanceof con ? t.success(u) : t.failure(u, c)), t.identity);
+  }
   function partialRecord(k, type, name) {
       return t.partial(Record_18(k.keys, () => type), name);
   }
@@ -2537,6 +2540,7 @@
   exports.DateType = DateType;
   exports.DateT = DateT;
   exports.Logger = Logger;
+  exports.instanceofCodec = instanceofCodec;
   exports.partialRecord = partialRecord;
   exports.autoImplement = autoImplement;
   exports.nullable = nullable;
