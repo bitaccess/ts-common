@@ -2,6 +2,15 @@ import * as t from 'io-ts'
 import { map } from 'fp-ts/lib/Record'
 import { isEmptyObject } from '#/guards'
 
+export function instanceofCodec<T>(con: { new (): T }): t.Type<T> {
+  return new t.Type(
+    `instanceof(${con.name})`,
+    (u): u is T => u instanceof con,
+    (u, c) => (u instanceof con ? t.success(u) : t.failure(u, c)),
+    t.identity,
+  )
+}
+
 export function partialRecord<KS extends t.KeyofType<any>, T extends t.Any>(
   k: KS,
   type: T,
