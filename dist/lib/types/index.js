@@ -1,6 +1,8 @@
 export * from './Date';
 export * from './Logger';
 export * from './helpers';
+export * from './basic';
 export * from './Enum';
-export * from './FunctionT';
+export * from './Function';
+export * from './BigNumber';
 //# sourceMappingURL=index.js.map

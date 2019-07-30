@@ -1,4 +1,5 @@
-import { UnionType, IntersectionType, getFunctionName, Type, success, number, string, failure, identity, partial, union, nullType, undefined as undefined$1, intersection, type, Function, keyof } from 'io-ts';
+import BigNumber from 'bignumber.js';
+import { UnionType, IntersectionType, getFunctionName, Type, success, number, string, failure, identity, type, Function, partial, union, nullType, undefined as undefined$1, intersection, keyof } from 'io-ts';
 
 class DateType extends Type {
     constructor() {
@@ -2422,6 +2423,29 @@ function extendCodec(parent, required, optional, name) {
     return intersection([parent, type(required, nameReq), partial(optional, nameOpt)], name);
 }
 
+class BigNumberType extends Type {
+    constructor() {
+        super('BigNumberT', (u) => u instanceof BigNumber, (u, c) => {
+            if (this.is(u)) {
+                return success(u);
+            }
+            else if (number.is(u)) {
+                return success(new BigNumber(u));
+            }
+            else if (string.is(u)) {
+                return success(new BigNumber(u));
+            }
+            else {
+                return failure(u, c);
+            }
+        }, identity);
+        this._tag = 'BigNumberType';
+    }
+}
+const BigNumberT = new BigNumberType();
+
+const Numeric = union([string, number, BigNumberT], 'Numeric');
+
 class EnumType extends Type {
     constructor(name, is, validate, encode) {
         super(name, is, validate, encode);
@@ -2533,5 +2557,5 @@ class DelegateLogger {
     }
 }
 
-export { DateType, DateT, Logger, instanceofCodec, partialRecord, autoImplement, nullable, optional, requiredOptionalCodec, extendCodec, EnumType, enumCodec, functionT, getMessage, SimpleReporter, assertType, stringify, capitalizeFirst, isObject, isEmptyObject, isUndefined, isNull, isNil, isString, isNumber, isArray, isType, DelegateLogger };
+export { DateType, DateT, Logger, instanceofCodec, partialRecord, autoImplement, nullable, optional, requiredOptionalCodec, extendCodec, Numeric, EnumType, enumCodec, functionT, BigNumberT, getMessage, SimpleReporter, assertType, stringify, capitalizeFirst, isObject, isEmptyObject, isUndefined, isNull, isNil, isString, isNumber, isArray, isType, DelegateLogger };
 //# sourceMappingURL=index.es.js.map

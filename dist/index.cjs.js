@@ -2,6 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var BigNumber = _interopDefault(require('bignumber.js'));
 var t = require('io-ts');
 
 class DateType extends t.Type {
@@ -2426,6 +2429,29 @@ function extendCodec(parent, required, optional, name) {
     return t.intersection([parent, t.type(required, nameReq), t.partial(optional, nameOpt)], name);
 }
 
+class BigNumberType extends t.Type {
+    constructor() {
+        super('BigNumberT', (u) => u instanceof BigNumber, (u, c) => {
+            if (this.is(u)) {
+                return t.success(u);
+            }
+            else if (t.number.is(u)) {
+                return t.success(new BigNumber(u));
+            }
+            else if (t.string.is(u)) {
+                return t.success(new BigNumber(u));
+            }
+            else {
+                return t.failure(u, c);
+            }
+        }, t.identity);
+        this._tag = 'BigNumberType';
+    }
+}
+const BigNumberT = new BigNumberType();
+
+const Numeric = t.union([t.string, t.number, BigNumberT], 'Numeric');
+
 class EnumType extends t.Type {
     constructor(name, is, validate, encode) {
         super(name, is, validate, encode);
@@ -2547,9 +2573,11 @@ exports.nullable = nullable;
 exports.optional = optional;
 exports.requiredOptionalCodec = requiredOptionalCodec;
 exports.extendCodec = extendCodec;
+exports.Numeric = Numeric;
 exports.EnumType = EnumType;
 exports.enumCodec = enumCodec;
 exports.functionT = functionT;
+exports.BigNumberT = BigNumberT;
 exports.getMessage = getMessage;
 exports.SimpleReporter = SimpleReporter;
 exports.assertType = assertType;

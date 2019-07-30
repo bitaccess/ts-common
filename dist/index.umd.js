@@ -1,8 +1,10 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('io-ts')) :
-  typeof define === 'function' && define.amd ? define(['exports', 'io-ts'], factory) :
-  (factory((global.faastTsCommon = {}),global.t));
-}(this, (function (exports,t) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('bignumber.js'), require('io-ts')) :
+  typeof define === 'function' && define.amd ? define(['exports', 'bignumber.js', 'io-ts'], factory) :
+  (factory((global.faastTsCommon = {}),global.BigNumber,global.t));
+}(this, (function (exports,BigNumber,t) { 'use strict';
+
+  BigNumber = BigNumber && BigNumber.hasOwnProperty('default') ? BigNumber['default'] : BigNumber;
 
   class DateType extends t.Type {
       constructor() {
@@ -2426,6 +2428,29 @@
       return t.intersection([parent, t.type(required, nameReq), t.partial(optional, nameOpt)], name);
   }
 
+  class BigNumberType extends t.Type {
+      constructor() {
+          super('BigNumberT', (u) => u instanceof BigNumber, (u, c) => {
+              if (this.is(u)) {
+                  return t.success(u);
+              }
+              else if (t.number.is(u)) {
+                  return t.success(new BigNumber(u));
+              }
+              else if (t.string.is(u)) {
+                  return t.success(new BigNumber(u));
+              }
+              else {
+                  return t.failure(u, c);
+              }
+          }, t.identity);
+          this._tag = 'BigNumberType';
+      }
+  }
+  const BigNumberT = new BigNumberType();
+
+  const Numeric = t.union([t.string, t.number, BigNumberT], 'Numeric');
+
   class EnumType extends t.Type {
       constructor(name, is, validate, encode) {
           super(name, is, validate, encode);
@@ -2547,9 +2572,11 @@
   exports.optional = optional;
   exports.requiredOptionalCodec = requiredOptionalCodec;
   exports.extendCodec = extendCodec;
+  exports.Numeric = Numeric;
   exports.EnumType = EnumType;
   exports.enumCodec = enumCodec;
   exports.functionT = functionT;
+  exports.BigNumberT = BigNumberT;
   exports.getMessage = getMessage;
   exports.SimpleReporter = SimpleReporter;
   exports.assertType = assertType;

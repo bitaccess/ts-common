@@ -8,4 +8,4 @@ class FunctionType extends t.Type {
 export function functionT(name) {
     return new FunctionType(name);
 }
-//# sourceMappingURL=FunctionT.js.map
+//# sourceMappingURL=Function.js.map
