@@ -1,8 +1,112 @@
 import * as t from 'io-ts'
-import { DateT, Logger, nullable, optional, enumCodec, requiredOptionalCodec, extendCodec, assertType } from '../src'
-import { instanceofCodec } from '../src/types/helpers'
+import {
+  DateT,
+  Logger,
+  nullable,
+  optional,
+  enumCodec,
+  instanceofCodec,
+  requiredOptionalCodec,
+  extendCodec,
+  assertType,
+  BigNumberT,
+  Numeric,
+} from '../src'
+import BigNumber from 'bignumber.js'
+
+const VERY_PRECISE_STRING = '1234567890.012345678901234567890123456789'
+const VERY_PRECISE_NUMBER = 1234567890.0123456789
+const VERY_PRECISE_BIGNUMBER = new BigNumber(VERY_PRECISE_STRING)
 
 describe('types', () => {
+  describe('BigNumberT', () => {
+    it('has name BigNumberT', () => {
+      expect(BigNumberT.name).toBe('BigNumberT')
+    })
+    it('has tag BigNumberType', () => {
+      expect(BigNumberT._tag).toBe('BigNumberType')
+    })
+    it('is returns true for valid BigNumber', () => {
+      expect(BigNumberT.is(VERY_PRECISE_BIGNUMBER)).toBe(true)
+    })
+    it('is returns false for number', () => {
+      expect(BigNumberT.is(VERY_PRECISE_NUMBER)).toBe(false)
+    })
+    it('is returns false for string', () => {
+      expect(BigNumberT.is(VERY_PRECISE_STRING)).toBe(false)
+    })
+    it('decode returns same instance for a BigNumber', () => {
+      const x = VERY_PRECISE_BIGNUMBER
+      const decoded = BigNumberT.decode(x)
+      expect(decoded.isRight()).toBe(true)
+      expect(decoded.value).toBe(x)
+    })
+    it('decode returns correct BigNumber for number', () => {
+      const x = VERY_PRECISE_NUMBER
+      const decoded = BigNumberT.decode(x)
+      expect(decoded.isRight()).toBe(true)
+      expect(decoded.value).toEqual(new BigNumber(x))
+    })
+    it('decode returns correct BigNumber for numeric string', () => {
+      const x = VERY_PRECISE_STRING
+      const decoded = BigNumberT.decode(x)
+      expect(decoded.isRight()).toBe(true)
+      expect(decoded.value).toEqual(new BigNumber(x))
+    })
+    it('decode returns BigNumber NaN for alphabetic string', () => {
+      const decoded = BigNumberT.decode('abc')
+      expect(decoded.isRight()).toBe(true)
+      expect(decoded.value).toEqual(new BigNumber(NaN))
+    })
+    it('decode returns error for object', () => {
+      expect(BigNumberT.decode({}).isLeft()).toBe(true)
+    })
+    it('encode returns identity', () => {
+      const x = VERY_PRECISE_BIGNUMBER
+      expect(BigNumberT.encode(x)).toBe(x)
+    })
+  })
+
+  describe('Numeric', () => {
+    it('has name Numeric', () => {
+      expect(Numeric.name).toBe('Numeric')
+    })
+    it('is returns true for valid BigNumber', () => {
+      expect(Numeric.is(VERY_PRECISE_BIGNUMBER)).toBe(true)
+    })
+    it('is returns true for number', () => {
+      expect(Numeric.is(VERY_PRECISE_NUMBER)).toBe(true)
+    })
+    it('is returns true for string', () => {
+      expect(Numeric.is(VERY_PRECISE_STRING)).toBe(true)
+    })
+    it('decode works for BigNumber', () => {
+      const x = VERY_PRECISE_BIGNUMBER
+      const decoded = Numeric.decode(x)
+      expect(decoded.isRight()).toBe(true)
+      expect(decoded.value).toEqual(x)
+    })
+    it('decode works for number', () => {
+      const x = VERY_PRECISE_NUMBER
+      const decoded = Numeric.decode(x)
+      expect(decoded.isRight()).toBe(true)
+      expect(decoded.value).toEqual(x)
+    })
+    it('decode works for number string', () => {
+      const x = VERY_PRECISE_STRING
+      const decoded = Numeric.decode(x)
+      expect(decoded.isRight()).toBe(true)
+      expect(decoded.value).toEqual(x)
+    })
+    it('decode returns error for object', () => {
+      expect(Numeric.decode({}).isLeft()).toBe(true)
+    })
+    it('encode returns identity', () => {
+      const x = VERY_PRECISE_BIGNUMBER
+      expect(Numeric.encode(x)).toBe(x)
+    })
+  })
+
   describe('enumCodec', () => {
     enum ExampleEnum {
       Foo = 'foo',
