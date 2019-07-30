@@ -63,5 +63,8 @@
     "tslint": "^5.14.0",
     "typedoc": "^0.14.2",
     "typescript": "^3.3.3333"
+  },
+  "dependencies": {
+    "bignumber.js": "^9.0.0"
   }
 }
