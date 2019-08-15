@@ -53,13 +53,13 @@ describe('types', () => {
       expect(decoded.isRight()).toBe(true)
       expect(decoded.value).toEqual(new BigNumber(x))
     })
-    it('decode returns BigNumber NaN for alphabetic string', () => {
+    it('decode returns error for alphabetic string', () => {
       const decoded = BigNumberT.decode('abc')
-      expect(decoded.isRight()).toBe(true)
-      expect(decoded.value).toEqual(new BigNumber(NaN))
+      expect(decoded.isLeft()).toBe(true)
     })
     it('decode returns error for object', () => {
-      expect(BigNumberT.decode({}).isLeft()).toBe(true)
+      const decoded = BigNumberT.decode({})
+      expect(decoded.isLeft()).toBe(true)
     })
     it('encode returns identity', () => {
       const x = VERY_PRECISE_BIGNUMBER

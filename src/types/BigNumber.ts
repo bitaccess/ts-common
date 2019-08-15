@@ -8,12 +8,17 @@ class BigNumberType extends t.Type<BigNumber> {
       'BigNumberT',
       (u): u is BigNumber => u instanceof BigNumber,
       (u, c) => {
-        if (this.is(u)) {
-          return t.success(u)
+        if (u instanceof BigNumber || (u && (u as any)._isBigNumber)) {
+          return t.success(u as BigNumber)
         } else if (t.number.is(u)) {
           return t.success(new BigNumber(u))
         } else if (t.string.is(u)) {
-          return t.success(new BigNumber(u))
+          const v = new BigNumber(u)
+          if (v.isNaN()) {
+            return t.failure(u, c)
+          } else {
+            return t.success(v)
+          }
         } else {
           return t.failure(u, c)
         }
