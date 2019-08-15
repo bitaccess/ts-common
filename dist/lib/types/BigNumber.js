@@ -3,14 +3,20 @@ import BigNumber from 'bignumber.js';
 class BigNumberType extends t.Type {
     constructor() {
         super('BigNumberT', (u) => u instanceof BigNumber, (u, c) => {
-            if (this.is(u)) {
+            if (u instanceof BigNumber || (u && u._isBigNumber)) {
                 return t.success(u);
             }
             else if (t.number.is(u)) {
                 return t.success(new BigNumber(u));
             }
             else if (t.string.is(u)) {
-                return t.success(new BigNumber(u));
+                const v = new BigNumber(u);
+                if (v.isNaN()) {
+                    return t.failure(u, c);
+                }
+                else {
+                    return t.success(v);
+                }
             }
             else {
                 return t.failure(u, c);

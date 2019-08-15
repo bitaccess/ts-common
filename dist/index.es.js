@@ -2426,14 +2426,20 @@ function extendCodec(parent, required, optional, name) {
 class BigNumberType extends Type {
     constructor() {
         super('BigNumberT', (u) => u instanceof BigNumber, (u, c) => {
-            if (this.is(u)) {
+            if (u instanceof BigNumber || (u && u._isBigNumber)) {
                 return success(u);
             }
             else if (number.is(u)) {
                 return success(new BigNumber(u));
             }
             else if (string.is(u)) {
-                return success(new BigNumber(u));
+                const v = new BigNumber(u);
+                if (v.isNaN()) {
+                    return failure(u, c);
+                }
+                else {
+                    return success(v);
+                }
             }
             else {
                 return failure(u, c);
