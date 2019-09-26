@@ -2,7 +2,7 @@ import * as t from 'io-ts'
 import { map } from 'fp-ts/lib/Record'
 import { isEmptyObject } from '#/guards'
 
-export function instanceofCodec<T>(con: { new (): T }): t.Type<T> {
+export function instanceofCodec<T>(con: { new (...args: any[]): T }): t.Type<T> {
   return new t.Type(
     `instanceof(${con.name})`,
     (u): u is T => u instanceof con,
