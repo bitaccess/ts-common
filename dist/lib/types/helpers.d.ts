@@ -1,6 +1,6 @@
 import * as t from 'io-ts';
 export declare function instanceofCodec<T>(con: {
-    new (): T;
+    new (...args: any[]): T;
 }): t.Type<T>;
 export declare function partialRecord<KS extends t.KeyofType<any>, T extends t.Any>(k: KS, type: T, name?: string): t.PartialC<Record<keyof KS['keys'], T>>;
 export declare function autoImplement<T extends object>(): new (values?: T | (() => T) | undefined) => T;
