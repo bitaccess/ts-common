@@ -19,3 +19,5 @@ export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>
 
 export const Numeric = t.union([t.string, t.number, BigNumberT], 'Numeric')
 export type Numeric = t.TypeOf<typeof Numeric>
+
+export type PromiseValue<T> = T extends Promise<infer X> ? X : never
