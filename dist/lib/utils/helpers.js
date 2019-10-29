@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js';
-import { isNil } from '#/guards';
+import { isNil } from '../guards';
 export function toBigNumber(value) {
     if (isNil(value)) {
         return value;
