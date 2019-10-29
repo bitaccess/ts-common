@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js'
-import { Numeric } from '#/types'
-import { isNil } from '#/guards'
+import { Numeric } from '../types'
+import { isNil } from '../guards'
 
 export function toBigNumber(value: Numeric): BigNumber
 export function toBigNumber(value: Numeric | null): BigNumber | null
