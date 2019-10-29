@@ -1,5 +1,7 @@
 import * as t from 'io-ts'
 import { capitalizeFirst, stringify, assertType, getMessage } from '../src'
+import { toBigNumber } from '../src/utils/helpers'
+import BigNumber from 'bignumber.js'
 
 describe('utils', () => {
   describe('string', () => {
@@ -86,6 +88,31 @@ describe('utils', () => {
       })
       it('throws correct error type when specified', () => {
         expect(() => assertType(t.string, 5, '', SyntaxError)).toThrow(SyntaxError)
+      })
+    })
+  })
+
+  describe('helpers', () => {
+    describe('toBigNumber', () => {
+      it('returns argument when provided BigNumber', () => {
+        const x = new BigNumber(123.456)
+        expect(toBigNumber(x)).toBe(x)
+      })
+      it('returns BigNumber when provided number', () => {
+        const x = 123.456
+        expect(toBigNumber(x)).toEqual(new BigNumber(x))
+      })
+      it('returns BigNumber when provided string', () => {
+        const x = '123.456'
+        expect(toBigNumber(x)).toEqual(new BigNumber(x))
+      })
+      it('returns null when provided null', () => {
+        const x = null
+        expect(toBigNumber(x)).toBe(x)
+      })
+      it('returns undefined when provided undefined', () => {
+        const x = undefined
+        expect(toBigNumber(x)).toBe(x)
       })
     })
   })
