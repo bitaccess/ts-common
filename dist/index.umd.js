@@ -1,8 +1,8 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('bignumber.js'), require('io-ts')) :
-  typeof define === 'function' && define.amd ? define(['exports', 'bignumber.js', 'io-ts'], factory) :
-  (factory((global.faastTsCommon = {}),global.BigNumber,global.t));
-}(this, (function (exports,BigNumber,t) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('io-ts'), require('bignumber.js')) :
+  typeof define === 'function' && define.amd ? define(['exports', 'io-ts', 'bignumber.js'], factory) :
+  (factory((global.faastTsCommon = {}),global.t,global.BigNumber));
+}(this, (function (exports,t,BigNumber) { 'use strict';
 
   BigNumber = BigNumber && BigNumber.hasOwnProperty('default') ? BigNumber['default'] : BigNumber;
 
@@ -2540,6 +2540,16 @@
       return validation.value;
   }
 
+  function toBigNumber(value) {
+      if (isNil(value)) {
+          return value;
+      }
+      if (value instanceof BigNumber) {
+          return value;
+      }
+      return new BigNumber(value);
+  }
+
   class DelegateLogger {
       constructor(logger, prefix) {
           this.prefix = prefix;
@@ -2588,6 +2598,7 @@
   exports.assertType = assertType;
   exports.stringify = stringify;
   exports.capitalizeFirst = capitalizeFirst;
+  exports.toBigNumber = toBigNumber;
   exports.isObject = isObject;
   exports.isEmptyObject = isEmptyObject;
   exports.isUndefined = isUndefined;

@@ -1,5 +1,5 @@
-import BigNumber from 'bignumber.js';
 import { UnionType, IntersectionType, getFunctionName, Type, success, number, string, failure, identity, type, Function, partial, union, nullType, undefined as undefined$1, intersection, keyof } from 'io-ts';
+import BigNumber from 'bignumber.js';
 
 class DateType extends Type {
     constructor() {
@@ -2535,6 +2535,16 @@ function assertType(typeCodec, value, description = 'type', ErrorType = TypeErro
     return validation.value;
 }
 
+function toBigNumber(value) {
+    if (isNil(value)) {
+        return value;
+    }
+    if (value instanceof BigNumber) {
+        return value;
+    }
+    return new BigNumber(value);
+}
+
 class DelegateLogger {
     constructor(logger, prefix) {
         this.prefix = prefix;
@@ -2563,5 +2573,5 @@ class DelegateLogger {
     }
 }
 
-export { DateType, DateT, Logger, instanceofCodec, partialRecord, autoImplement, nullable, optional, requiredOptionalCodec, extendCodec, Numeric, EnumType, enumCodec, functionT, BigNumberT, getMessage, SimpleReporter, assertType, stringify, capitalizeFirst, isObject, isEmptyObject, isUndefined, isNull, isNil, isString, isNumber, isArray, isType, DelegateLogger };
+export { DateType, DateT, Logger, instanceofCodec, partialRecord, autoImplement, nullable, optional, requiredOptionalCodec, extendCodec, Numeric, EnumType, enumCodec, functionT, BigNumberT, getMessage, SimpleReporter, assertType, stringify, capitalizeFirst, toBigNumber, isObject, isEmptyObject, isUndefined, isNull, isNil, isString, isNumber, isArray, isType, DelegateLogger };
 //# sourceMappingURL=index.es.js.map

@@ -4,8 +4,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var BigNumber = _interopDefault(require('bignumber.js'));
 var t = require('io-ts');
+var BigNumber = _interopDefault(require('bignumber.js'));
 
 class DateType extends t.Type {
     constructor() {
@@ -2541,6 +2541,16 @@ function assertType(typeCodec, value, description = 'type', ErrorType = TypeErro
     return validation.value;
 }
 
+function toBigNumber(value) {
+    if (isNil(value)) {
+        return value;
+    }
+    if (value instanceof BigNumber) {
+        return value;
+    }
+    return new BigNumber(value);
+}
+
 class DelegateLogger {
     constructor(logger, prefix) {
         this.prefix = prefix;
@@ -2589,6 +2599,7 @@ exports.SimpleReporter = SimpleReporter;
 exports.assertType = assertType;
 exports.stringify = stringify;
 exports.capitalizeFirst = capitalizeFirst;
+exports.toBigNumber = toBigNumber;
 exports.isObject = isObject;
 exports.isEmptyObject = isEmptyObject;
 exports.isUndefined = isUndefined;
