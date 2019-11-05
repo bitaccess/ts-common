@@ -2,6 +2,7 @@ import * as t from 'io-ts'
 import { capitalizeFirst, stringify, assertType, getMessage } from '../src'
 import { toBigNumber } from '../src/utils/helpers'
 import BigNumber from 'bignumber.js'
+import { requiredOptionalCodec } from '../src/types/helpers'
 
 describe('utils', () => {
   describe('string', () => {
@@ -91,6 +92,22 @@ describe('utils', () => {
         )
         expect(() => assertType(customType, {})).toThrow(
           'Invalid type - Expected type number for CustomType.a, but got: undefined',
+        )
+      })
+      it('throws for invalid complex type', () => {
+        const customType = t.intersection(
+          [
+            t.type({
+              a: t.union([t.number, t.null]),
+            }),
+            t.partial({
+              b: t.string,
+            }),
+          ],
+          'CustomType',
+        )
+        expect(() => assertType(customType, {})).toThrow(
+          'Invalid type - Expected type number | null for CustomType.a, but got: undefined',
         )
       })
       it('throws TypeError when error type not provided', () => {
