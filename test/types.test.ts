@@ -310,6 +310,9 @@ describe('types', () => {
     it('nullable(t.string).is returns false for undefined', () => {
       expect(nullable(t.string).is(undefined)).toBe(false)
     })
+    it('nullable(t.string) has correct name', () => {
+      expect(nullable(t.string).name).toBe('(string | null)')
+    })
   })
 
   describe('optional', () => {
@@ -324,6 +327,9 @@ describe('types', () => {
     })
     it('optional(t.string).is returns true for undefined', () => {
       expect(optional(t.string).is(undefined)).toBe(true)
+    })
+    it('optional(t.string) has correct name', () => {
+      expect(optional(t.string).name).toBe('(string | undefined)')
     })
   })
 

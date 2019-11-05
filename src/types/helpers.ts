@@ -29,8 +29,8 @@ export function autoImplement<T extends object>() {
   } as new (values?: T | (() => T)) => T
 }
 
-export const nullable = <T extends t.Mixed>(codec: T) => t.union([codec, t.nullType], `${codec.name}Nullable`)
-export const optional = <T extends t.Mixed>(codec: T) => t.union([codec, t.undefined], `${codec.name}Optional`)
+export const nullable = <T extends t.Mixed>(codec: T) => t.union([codec, t.nullType])
+export const optional = <T extends t.Mixed>(codec: T) => t.union([codec, t.undefined])
 
 /**
  * Creates a codec for an object with required and optional params using an intersection
