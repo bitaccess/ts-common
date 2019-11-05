@@ -98,16 +98,16 @@ describe('utils', () => {
         const customType = t.intersection(
           [
             t.type({
-              a: t.union([t.number, t.null]),
+              a: t.number,
             }),
             t.partial({
-              b: t.string,
+              b: t.union([t.string, t.null]),
             }),
           ],
           'CustomType',
         )
-        expect(() => assertType(customType, {})).toThrow(
-          'Invalid type - Expected type (number | null) for CustomType.a, but got: undefined',
+        expect(() => assertType(customType, { a: 5, b: 5 })).toThrow(
+          'Invalid type - Expected type string | null | undefined for CustomType.b, but got: 5',
         )
       })
       it('throws TypeError when error type not provided', () => {
