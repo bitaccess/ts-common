@@ -64,24 +64,34 @@ describe('utils', () => {
         assertType(t.string, '5')
       })
       it('throws for invalid string', () => {
-        expect(() => assertType(t.string, 5, 'myDescription')).toThrow('Invalid myDescription')
+        expect(() => assertType(t.string, 5, 'myDescription')).toThrow(
+          'Invalid myDescription - Expected type string, but got: 5',
+        )
       })
       it('succeeds for valid custom type', () => {
-        const customType = t.type({
-          a: t.number,
-          b: t.string,
-        })
+        const customType = t.type(
+          {
+            a: t.number,
+            b: t.string,
+          },
+          'CustomType',
+        )
         assertType(customType, {
           a: 5,
           b: '5',
         })
       })
       it('throws for invalid custom type', () => {
-        const customType = t.type({
-          a: t.number,
-          b: t.string,
-        })
-        expect(() => assertType(customType, {})).toThrow()
+        const customType = t.type(
+          {
+            a: t.number,
+            b: t.string,
+          },
+          'CustomType',
+        )
+        expect(() => assertType(customType, {})).toThrow(
+          'Invalid type - Expected type number for CustomType.a, but got: undefined',
+        )
       })
       it('throws TypeError when error type not provided', () => {
         expect(() => assertType(t.string, 5, '')).toThrow(TypeError)
