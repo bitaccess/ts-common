@@ -14,9 +14,6 @@ function getContextPath(context) {
         .map(({ key, type }) => (key ? key : type.name))
         .join('.');
 }
-function stringifyNested(types, delim) {
-    return types.map((type) => type.name).join(delim);
-}
 function getContextTypeName(context) {
     if (context.length <= 0) {
         return '';
@@ -24,10 +21,7 @@ function getContextTypeName(context) {
     if (context.length > 1) {
         const parent = context[context.length - 2].type;
         if (isCodec(parent, UnionType)) {
-            return stringifyNested(parent.types, ' | ');
-        }
-        else if (isCodec(parent, IntersectionType)) {
-            return stringifyNested(parent.types, ' & ');
+            return parent.name;
         }
     }
     return context[context.length - 1].type.name;
