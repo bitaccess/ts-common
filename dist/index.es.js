@@ -3034,8 +3034,8 @@ function autoImplement() {
         }
     };
 }
-const nullable = (codec) => union([codec, nullType], `${codec.name}Nullable`);
-const optional = (codec) => union([codec, undefined$1], `${codec.name}Optional`);
+const nullable = (codec) => union([codec, nullType]);
+const optional = (codec) => union([codec, undefined$1]);
 function requiredOptionalCodec(required, optional, name) {
     return intersection([type(required, `${name}Req`), partial(optional, `${name}Opt`)], name);
 }

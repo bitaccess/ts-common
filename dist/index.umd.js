@@ -3039,8 +3039,8 @@
           }
       };
   }
-  const nullable = (codec) => t.union([codec, t.nullType], `${codec.name}Nullable`);
-  const optional = (codec) => t.union([codec, t.undefined], `${codec.name}Optional`);
+  const nullable = (codec) => t.union([codec, t.nullType]);
+  const optional = (codec) => t.union([codec, t.undefined]);
   function requiredOptionalCodec(required, optional, name) {
       return t.intersection([t.type(required, `${name}Req`), t.partial(optional, `${name}Opt`)], name);
   }
