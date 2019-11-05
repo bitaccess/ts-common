@@ -20,10 +20,6 @@ function getContextPath(context: Context): string {
     .join('.')
 }
 
-function stringifyNested(types: any[], delim: string): string {
-  return types.map((type: Type<any>) => type.name).join(delim)
-}
-
 function getContextTypeName(context: Context): string {
   if (context.length <= 0) {
     return ''
@@ -31,9 +27,7 @@ function getContextTypeName(context: Context): string {
   if (context.length > 1) {
     const parent = context[context.length - 2].type
     if (isCodec(parent, UnionType)) {
-      return stringifyNested(parent.types, ' | ')
-    } else if (isCodec(parent, IntersectionType)) {
-      return stringifyNested(parent.types, ' & ')
+      return parent.name
     }
   }
   return context[context.length - 1].type.name

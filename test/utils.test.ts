@@ -107,7 +107,7 @@ describe('utils', () => {
           'CustomType',
         )
         expect(() => assertType(customType, {})).toThrow(
-          'Invalid type - Expected type number | null for CustomType.a, but got: undefined',
+          'Invalid type - Expected type (number | null) for CustomType.a, but got: undefined',
         )
       })
       it('throws TypeError when error type not provided', () => {
