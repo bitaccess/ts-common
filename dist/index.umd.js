@@ -3163,17 +3163,27 @@
           .map(({ key, type }) => (key ? key : type.name))
           .join('.');
   }
+  function getFlattenedCodecName(codec) {
+      if (isCodec(codec, t.UnionType)) {
+          return codec.types.map(t => getFlattenedCodecName(t)).join(' | ');
+      }
+      return codec.name;
+  }
   function getContextTypeName(context) {
       if (context.length <= 0) {
           return '';
       }
-      if (context.length > 1) {
-          const parent = context[context.length - 2].type;
+      let codec = context[context.length - 1].type;
+      for (let i = context.length - 1; i > 0; i--) {
+          const parent = context[i - 1].type;
           if (isCodec(parent, t.UnionType)) {
-              return parent.name;
+              codec = parent;
+          }
+          else if (isCodec(parent, t.PartialType)) {
+              return `${getFlattenedCodecName(codec)} | undefined`;
           }
       }
-      return context[context.length - 1].type.name;
+      return `${getFlattenedCodecName(codec)}`;
   }
   function getMessage(e) {
       const expectedType = getContextTypeName(e.context);
