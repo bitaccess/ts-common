@@ -1,7 +1,7 @@
 import * as t from 'io-ts'
 import BigNumber from 'bignumber.js'
 
-class BigNumberType extends t.Type<BigNumber> {
+class BigNumberType extends t.Type<BigNumber, string> {
   readonly _tag: 'BigNumberType' = 'BigNumberType'
   constructor() {
     super(
@@ -23,7 +23,7 @@ class BigNumberType extends t.Type<BigNumber> {
           return t.failure(u, c)
         }
       },
-      t.identity,
+      u => u.toString(),
     )
   }
 }

@@ -61,9 +61,8 @@ describe('types', () => {
       const decoded = BigNumberT.decode({})
       expect(decoded.isLeft()).toBe(true)
     })
-    it('encode returns identity', () => {
-      const x = VERY_PRECISE_BIGNUMBER
-      expect(BigNumberT.encode(x)).toBe(x)
+    it('encode returns string', () => {
+      expect(BigNumberT.encode(VERY_PRECISE_BIGNUMBER)).toBe(VERY_PRECISE_STRING)
     })
   })
 
@@ -101,9 +100,11 @@ describe('types', () => {
     it('decode returns error for object', () => {
       expect(Numeric.decode({}).isLeft()).toBe(true)
     })
-    it('encode returns identity', () => {
-      const x = VERY_PRECISE_BIGNUMBER
-      expect(Numeric.encode(x)).toBe(x)
+    it('encode returns string for bignumber', () => {
+      expect(Numeric.encode(VERY_PRECISE_BIGNUMBER)).toBe(VERY_PRECISE_STRING)
+    })
+    it('encode returns number for number', () => {
+      expect(Numeric.encode(VERY_PRECISE_NUMBER)).toBe(VERY_PRECISE_NUMBER)
     })
   })
 
