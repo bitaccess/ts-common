@@ -1,5 +1,5 @@
 import * as t from 'io-ts'
-import { capitalizeFirst, stringify, assertType, getMessage } from '../src'
+import { capitalizeFirst, stringify, assertType, getMessage, BigNumberT } from '../src'
 import { toBigNumber } from '../src/utils/helpers'
 import BigNumber from 'bignumber.js'
 import { requiredOptionalCodec } from '../src/types/helpers'
@@ -68,6 +68,9 @@ describe('utils', () => {
         expect(() => assertType(t.string, 5, 'myDescription')).toThrow(
           'Invalid myDescription - Expected type string, but got: 5',
         )
+      })
+      it('succeeds for BigNumberT and string', () => {
+        assertType(BigNumberT, '5')
       })
       it('succeeds for valid custom type', () => {
         const customType = t.type(

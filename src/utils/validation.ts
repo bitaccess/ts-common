@@ -63,7 +63,7 @@ export const SimpleReporter: Reporter<Array<string>> = {
  * @throws TypeError when assertion fails
  */
 export function assertType<T>(
-  typeCodec: Type<T>,
+  typeCodec: Type<T, any, unknown>,
   value: unknown,
   description: string = 'type',
   ErrorType: { new (message: string): Error } = TypeError,
