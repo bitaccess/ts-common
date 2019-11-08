@@ -21,7 +21,7 @@ class BigNumberType extends t.Type {
             else {
                 return t.failure(u, c);
             }
-        }, t.identity);
+        }, u => u.toString());
         this._tag = 'BigNumberType';
     }
 }

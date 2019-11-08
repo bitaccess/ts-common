@@ -1,6 +1,6 @@
 import * as t from 'io-ts';
 import BigNumber from 'bignumber.js';
-declare class BigNumberType extends t.Type<BigNumber> {
+declare class BigNumberType extends t.Type<BigNumber, string> {
     readonly _tag: 'BigNumberType';
     constructor();
 }

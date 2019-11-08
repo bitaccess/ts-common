@@ -3086,7 +3086,7 @@
               else {
                   return t.failure(u, c);
               }
-          }, t.identity);
+          }, u => u.toString());
           this._tag = 'BigNumberType';
       }
   }
@@ -3202,6 +3202,10 @@
       return validation.value;
   }
 
+  function isMatchingError(e, partialMessages) {
+      const messageLower = e.toString().toLowerCase();
+      return partialMessages.some(pm => messageLower.includes(pm.toLowerCase()));
+  }
   function toBigNumber(value) {
       if (isNil(value)) {
           return value;
@@ -3258,6 +3262,7 @@
   exports.instanceofCodec = instanceofCodec;
   exports.isArray = isArray;
   exports.isEmptyObject = isEmptyObject;
+  exports.isMatchingError = isMatchingError;
   exports.isNil = isNil;
   exports.isNull = isNull;
   exports.isNumber = isNumber;

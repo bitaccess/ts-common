@@ -3081,7 +3081,7 @@ class BigNumberType extends Type {
             else {
                 return failure(u, c);
             }
-        }, identity);
+        }, u => u.toString());
         this._tag = 'BigNumberType';
     }
 }
@@ -3197,6 +3197,10 @@ function assertType(typeCodec, value, description = 'type', ErrorType = TypeErro
     return validation.value;
 }
 
+function isMatchingError(e, partialMessages) {
+    const messageLower = e.toString().toLowerCase();
+    return partialMessages.some(pm => messageLower.includes(pm.toLowerCase()));
+}
 function toBigNumber(value) {
     if (isNil(value)) {
         return value;
@@ -3235,5 +3239,5 @@ class DelegateLogger {
     }
 }
 
-export { BigNumberT, DateT, DateType, DelegateLogger, EnumType, Logger, Numeric, SimpleReporter, assertType, autoImplement, capitalizeFirst, enumCodec, extendCodec, functionT, getMessage, instanceofCodec, isArray, isEmptyObject, isNil, isNull, isNumber, isObject, isString, isType, isUndefined, nullable, optional, partialRecord, requiredOptionalCodec, stringify, toBigNumber };
+export { BigNumberT, DateT, DateType, DelegateLogger, EnumType, Logger, Numeric, SimpleReporter, assertType, autoImplement, capitalizeFirst, enumCodec, extendCodec, functionT, getMessage, instanceofCodec, isArray, isEmptyObject, isMatchingError, isNil, isNull, isNumber, isObject, isString, isType, isUndefined, nullable, optional, partialRecord, requiredOptionalCodec, stringify, toBigNumber };
 //# sourceMappingURL=index.es.js.map
