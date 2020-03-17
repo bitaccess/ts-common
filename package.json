@@ -61,6 +61,7 @@
   },
   "dependencies": {
     "bignumber.js": "^9.0.0",
+    "fp-ts": "^1.19.5",
     "io-ts": "^1.10.4"
   }
 }
