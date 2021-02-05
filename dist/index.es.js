@@ -114,9 +114,12 @@ function extendCodec(parent, required, optional, name) {
 
 class BigNumberType extends Type {
     constructor() {
-        super('BigNumberT', (u) => u instanceof BigNumber, (u, c) => {
-            if (u instanceof BigNumber || (u && u._isBigNumber)) {
+        super('BigNumberT', BigNumber.isBigNumber, (u, c) => {
+            if (u instanceof BigNumber) {
                 return success(u);
+            }
+            else if (BigNumber.isBigNumber(u)) {
+                return success(new BigNumber(u));
             }
             else if (number.is(u)) {
                 return success(new BigNumber(u));
