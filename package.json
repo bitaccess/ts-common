@@ -1,11 +1,11 @@
 {
-  "name": "@faast/ts-common",
+  "name": "@bitaccess/ts-common",
   "version": "0.6.3",
-  "description": "Common typescript types and utils used by faast",
+  "description": "Common typescript types and utils used by bitaccess",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/go-faast/faast-ts-common.git"
+    "url": "git+ssh://git@github.com/bitaccess/ts-common.git"
   },
   "author": "Dylan Seago <dylan@bitaccess.co>",
   "main": "dist/index.cjs.js",
