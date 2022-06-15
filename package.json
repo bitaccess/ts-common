@@ -1,6 +1,6 @@
 {
   "name": "@bitaccess/ts-common",
-  "version": "0.6.3",
+  "version": "1.0.0",
   "description": "Common typescript types and utils used by bitaccess",
   "license": "MIT",
   "repository": {
