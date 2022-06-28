@@ -38,3 +38,4 @@ export interface BigNumberC extends BigNumberType {}
  */
 export const BigNumberT: BigNumberC = new BigNumberType()
 export type BigNumberT = t.TypeOf<typeof BigNumberT>
+export { BigNumber }
