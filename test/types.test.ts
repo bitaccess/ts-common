@@ -11,6 +11,7 @@ import {
   assertType,
   BigNumberT,
   Numeric,
+  BigNumber as BigNumberExported,
 } from '../src'
 import BigNumber from 'bignumber.js'
 
@@ -105,6 +106,15 @@ describe('types', () => {
     })
     it('encode returns number for number', () => {
       expect(Numeric.encode(VERY_PRECISE_NUMBER)).toBe(VERY_PRECISE_NUMBER)
+    })
+  })
+
+  describe('bignumber', () => {
+    it('bignumber is exported', () => {
+      const a = new BigNumberExported(123)
+      const b = new BigNumber(123)
+      const isAEqualToB = a.isEqualTo(b)
+      expect(isAEqualToB).toBe(true)
     })
   })
 
