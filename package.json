@@ -1,6 +1,6 @@
 {
   "name": "@bitaccess/ts-common",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Common typescript types and utils used by bitaccess",
   "license": "MIT",
   "repository": {
@@ -29,8 +29,8 @@
     "pretest": "npm run lint",
     "test": "jest --runInBand --detectOpenHandles",
     "preversion": "bin/preversion.sh",
-    "version": "npm run build",
-    "postversion": "git push && git push --tags",
+    "prepublish": "npm run build",
+    "postpublish": "git push && git push --tags",
     "release": "npm publish"
   },
   "devDependencies": {
